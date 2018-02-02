@@ -1,0 +1,123 @@
+<!doctype html>
+<!-- $Id: customchecks.html,v 1.1 2017/07/19 11:03:52 c83265 Exp $ -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HPC Interface Monitoring</title>
+	<link href="images/favicon.ico" rel="shorcut icon" type="image/x-icon"></link>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="styles/customchecks.css" />
+	<script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var okbg = '#A6E22E'
+		var warningbg = '#E59720'
+		var criticalbg = '#F9265E'
+		var unknownbg = '#8C81FF'
+		var refreshInterval=5; //Minutes
+
+		function createRow(host, service, serviceLogName) {
+			var table = document.getElementById("tabla");
+			var row = table.insertRow(table.rows.length);
+			var cellHost = row.insertCell(0);
+			var cellService = row.insertCell(1);
+			var cellStatus = row.insertCell(2);
+			var cellLastCheck = row.insertCell(3);
+			var cellStatusInformation = row.insertCell(4);
+	
+			cellHost.className = "host";
+			cellService.className = "service";
+			cellStatus.className = "status";
+			cellLastCheck.className = "last_check";
+			cellStatusInformation.className = "status_information";
+	
+			cellHost.id = "host_" + serviceLogName;
+			cellService.id = "service_" + serviceLogName;
+			cellStatus.id = "status_" + serviceLogName;
+			cellLastCheck.id = "last_check_" + serviceLogName;
+			cellStatusInformation.id = "status_information_" + serviceLogName;
+	
+			cellHost.innerText = host;
+			cellService.innerText = service;
+		}
+
+		function updateValues(serviceLogName, updatedValues){
+			var status = updatedValues[0];
+			var lastCheck = updatedValues[1];
+			var statusInformation = updatedValues[2];
+			var statusBackgroundColor;
+
+			switch (String(status)){
+				case "OK":
+					statusBackgroundColor = okbg;
+					break;
+				case "WARNING":
+					statusBackgroundColor = warningbg;
+					break;
+				case "CRITICAL":
+					statusBackgroundColor = criticalbg;
+					break;
+				default:
+					statusBackgroundColor = unknownbg;
+			}
+
+			document.getElementById("status_" + serviceLogName).innerText = updatedValues[0];
+			document.getElementById("status_" + serviceLogName).style.backgroundColor = statusBackgroundColor;
+			document.getElementById("last_check_" + serviceLogName).innerText = updatedValues[1];
+			document.getElementById("status_information_" + serviceLogName).innerText = updatedValues[2];
+		}
+	
+		function getValues(checkInfo) {
+			var status = checkInfo.match(/OK|WARNING|CRITICAL/);
+			var lastCheck = checkInfo.match(/[0-9]{2}:[0-9]{2}:[0-9]{2}/);
+			var statusInformation = checkInfo.substr(0,checkInfo.search(/\|/));
+			return [status, lastCheck, statusInformation];
+		}
+		 
+		function loadData(serviceLogName) {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var checkInfo = this.responseText;
+					updateValues(serviceLogName, getValues(checkInfo));
+				}
+			}
+
+			xhttp.open("GET", "logs/"+serviceLogName+".txt", true);
+			xhttp.send();
+		}
+	  
+		function updateTable(){
+			loadData("check_home15");
+			loadData("check_available_nodes");
+		}
+
+		function min2ms(min){return min*60*1000;}
+
+		function start(){
+			createRow("cae_nas1", "home15 performance", "check_home15");
+			createRow("cae_adm1", "Current available nodes", "check_available_nodes");
+			updateTable();
+		}
+
+		setInterval(function(){updateTable();}, 1000);
+	</script>
+</head>
+
+<body onload="start()">
+	<div class="wrapper">
+		<table>
+			<thead>
+				<tr>
+					<th>Host</th>
+					<th>Service</th>
+					<th>Status</th>
+					<th>Last check</th>
+					<th>Satus Information</th>
+				</tr>
+			</thead>
+			<tbody id="tabla">
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
