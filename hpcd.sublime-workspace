@@ -1,0 +1,873 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"borde",
+				"border-style"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"ocae",
+				"oCaeNas1Home15AwaitingTimeGm"
+			],
+			[
+				"oCaeNas",
+				"oCaeNas1Home15UsageGm"
+			],
+			[
+				"oCa",
+				"oCaeAdm1freeNodesGm"
+			],
+			[
+				"br",
+				"break"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"iT",
+				"iTimeUnitRange"
+			],
+			[
+				"_L",
+				"_logName"
+			],
+			[
+				"_lo",
+				"_logName"
+			],
+			[
+				"log",
+				"_logData"
+			],
+			[
+				"awaiting",
+				"awaiting-time"
+			],
+			[
+				"oCaeN",
+				"oCaeNas1Home15PerformanceChart"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"CON",
+				"CONFIRMATON"
+			],
+			[
+				"DISPLA",
+				"DISPLAY_NUMBER"
+			],
+			[
+				"DISPL",
+				"DISPLAY_NUMBER"
+			],
+			[
+				"xm",
+				"xming"
+			],
+			[
+				"IF",
+				"IF"
+			],
+			[
+				"ERR",
+				"ERRORLOG"
+			],
+			[
+				"E",
+				"ERRORLEVEL"
+			],
+			[
+				"scale",
+				"scaleLabel"
+			],
+			[
+				"ba",
+				"backgroundColor"
+			],
+			[
+				"home",
+				"home15-status"
+			],
+			[
+				"oCaeNas1",
+				"oCaeNasHome15StatusTimeChart"
+			],
+			[
+				"d",
+				"dflt"
+			],
+			[
+				"Ima",
+				"iMaxNodes"
+			],
+			[
+				"iM",
+				"iMaxNodes"
+			],
+			[
+				"_g",
+				"_Gm"
+			],
+			[
+				"_",
+				"_Gm"
+			],
+			[
+				"_log",
+				"_logData"
+			],
+			[
+				"oca",
+				"oCaeNas1UsageGm"
+			],
+			[
+				"paddig",
+				"padding-left"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"parse",
+				"parseFloat"
+			],
+			[
+				"ocaeNas",
+				"oCaeNas1AwaitingTimeGm"
+			],
+			[
+				"oCae",
+				"oCaeAdm1AvailableNodesGm"
+			],
+			[
+				"ca",
+				"cae_adm1-check-available-nodes-color-div"
+			],
+			[
+				"cae_adm1-check-available",
+				"cae_adm1-check-available-nodes-color-div"
+			],
+			[
+				"cae_adm1",
+				"cae_adm1-check-available-nodes-color-div"
+			],
+			[
+				"set",
+				"setOptions"
+			],
+			[
+				"cae_nas1-che",
+				"cae_nas1-check-home15-awaiting-time-canvas"
+			],
+			[
+				"cae_nas1",
+				"cae_nas1-check-home15-usage-canvas"
+			],
+			[
+				"CAE",
+				"cae_adm1-check-available-nodes-canvas"
+			],
+			[
+				"cae_adm",
+				"cae_adm1-check-available-nodes-canvas"
+			],
+			[
+				"oCaeA",
+				"oCaeAdm1CheckAvailableNodesGm"
+			],
+			[
+				"cae_m",
+				"cae_adm1-check-available-nodes-div"
+			],
+			[
+				"_status",
+				"_statusInformation"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "dashboard.htm",
+			"settings":
+			{
+				"buffer_size": 1422,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/nagiosdb.js",
+			"settings":
+			{
+				"buffer_size": 10390,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "#wrapper{\n\twidth: 1235px;\n\theight: 200px;\n\tmargin-left: auto;\n\tmargin-right: auto;\n\tmargin-top: 25px;\n}\n\n.frame{\n\t/*margin-bottom: 300px;*/\n\tbox-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);\n\tborder-radius: 13px;\n}\n\n.gauge-meter{\n\twidth: 400px;\n\theight: 290px;\n\ttop:-50px;\n}\n\n.time-chart{\n\t\n}\n\n.hidden{\n\tvisibility: hidden;\n}\n\n.label{\n\ttext-align: center;\n\tfont: 35px EADS sans;\n\tfont-weight:bold;\n\tcolor: rgba(0,0,0,.6);\n\ttext-shadow: rgba(0,0,0,.2) 2px 6px 5px,rgba(255,255,255,.4) 0 -4px 30px;\n\tpadding-top: 15px;\n}\n\n.top-label{\n\tpadding-left: 30px;\n\tpadding-top:10px;\n\tcolor:#999999;\n\tfont: 45px EADS sans;\n\tfont-weight:bold;\n\tmargin-left: auto;\n\tmargin-right: auto;\n}\n\n/*table tr td canvas{\n\tborder: 1px solid;\n}*/",
+			"file": "css/nagiosdb.css",
+			"file_size": 767,
+			"file_write_time": 131624729676606566,
+			"settings":
+			{
+				"buffer_size": 718,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "pa",
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"pac cl",
+				"Package Control: List Packages"
+			],
+			[
+				"forma",
+				"CodeFormatter: Format as Javascript Syntax"
+			],
+			[
+				"pac ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pac ",
+				"Package Control: Remove Package"
+			],
+			[
+				" pack li",
+				"Package Control: List Packages"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Git: Init"
+			],
+			[
+				"pack control",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"seth",
+				"Set Syntax: HTML"
+			],
+			[
+				"npm",
+				"npm: Install Package"
+			],
+			[
+				"pacinstal",
+				"Package Control: Install Package"
+			],
+			[
+				"setja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"packains",
+				"Package Control: Install Package"
+			],
+			[
+				"stjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"settjas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set s cs",
+				"Set Syntax: CSS"
+			],
+			[
+				"pacin",
+				"Package Control: Install Package"
+			],
+			[
+				"pacl",
+				"Package Control: Enable Package"
+			],
+			[
+				"setsba",
+				"Set Syntax: Batch File"
+			],
+			[
+				"paconin",
+				"Package Control: Install Package"
+			],
+			[
+				"pacorep",
+				"Package Control: Remove Package"
+			],
+			[
+				"packconl",
+				"Package Control: List Packages"
+			],
+			[
+				"packainstal",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"packaremo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: li",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"packageins",
+				"Package Control: Install Package"
+			],
+			[
+				"setsyja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"j",
+				"Set Syntax: JavaDoc"
+			],
+			[
+				"githu",
+				"GitHub: Switch Accounts"
+			],
+			[
+				"package control:",
+				"Package Control: List Packages"
+			],
+			[
+				"packins",
+				"Package Control: Install Package"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"packacoinsta",
+				"Package Control: Install Package"
+			],
+			[
+				"packacorem",
+				"Package Control: Remove Package"
+			],
+			[
+				"packacointa",
+				"Package Control: Install Package"
+			],
+			[
+				"snipte",
+				"Snippet: .text()"
+			],
+			[
+				"jquery ",
+				"Snippet: A basic jQuery selector"
+			],
+			[
+				"jquerycha",
+				"Snippet: jQuery change handler"
+			],
+			[
+				"jquery",
+				"Snippet: A basic jQuery selector"
+			],
+			[
+				"package control",
+				"Package Control: List Packages"
+			],
+			[
+				"pacins",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"vintage",
+				"Vintageous: Toggle Vim Ctrl Keys"
+			],
+			[
+				"vintageous",
+				"Vintageous: Open .vintageousrc"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 412.0
+	},
+	"console":
+	{
+		"height": 222.0,
+		"history":
+		[
+			"npm",
+			"echo",
+			"npm",
+			"npm install jquery",
+			"npm"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/inetpub/wwwroot/hpcd",
+		"/C/inetpub/wwwroot/hpcd/css",
+		"/C/inetpub/wwwroot/hpcd/js"
+	],
+	"file_history":
+	[
+		"/C/CAE/Sublime Text/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/C/CAE/Sublime Text/Data/Packages/CodeFormatter/CodeFormatter.sublime-settings",
+		"/C/CAE/Sublime Text/Data/Packages/CodeFormatter/Default (Windows).sublime-keymap",
+		"/C/inetpub/wwwroot/nagiosdashboard/wysiwyg/HPC Interface Monitoring/page1.html",
+		"/C/inetpub/wwwroot/nagiosdashboard/dashboard.htm",
+		"/C/CAE/Sublime Text/Data/Packages/User/View In Browser.sublime-settings",
+		"/C/inetpub/wwwroot/nagiosdashboard/logs/cae_nas1_check_home15.htm",
+		"/J/WORKAREA/98_Dev/nagios/shell_script/check_quota.sh",
+		"/C/Users/c83265/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/E6L82EAN/username_and_hddsn_JaimeDeLaPuente.txt",
+		"/C/inetpub/wwwroot/nagiosdashboard/js/nagiosdb.js",
+		"/W/98_Dev/nagios_dashboard/shell_script/check_home15",
+		"/C/Users/c83265/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/E6L82EAN/Desconectados_12_01_2018.csv",
+		"/C/Users/c83265/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/E6L82EAN/Desconectados_05_01_2018.csv",
+		"/W/98_Dev/javascript_examples/amcharts_realtime/js/index.js",
+		"/C/inetpub/wwwroot/nagiosdashboard/lib/serial.js",
+		"/C/inetpub/wwwroot/nagiosdashboard/css/style.css",
+		"/C/inetpub/wwwroot/nagiosdashboard/lib/Chart.bundle.js",
+		"/C/inetpub/wwwroot/nagiosdashboard/js/nagiosdb-0.1.js",
+		"/E/Instalación/MACs.txt",
+		"/C/Users/Public/Desktop/R@1n.txt",
+		"/E/Programas/Sublime Text/Data/Packages/View In Browser/View In Browser.sublime-settings",
+		"/E/Programas/Sublime Text/Data/Packages/User/View In Browser.sublime-settings",
+		"/E/Programas/Sublime Text/Data/Packages/Package Control/Package Control.sublime-settings",
+		"/C/inetpub/wwwroot/nagiosdashboard/nagiosdashboard.sublime-project",
+		"/C/CAE/Sublime Text/Data/Packages/User/Git.sublime-settings",
+		"/C/CAE/Sublime Text/Data/Packages/Git/Git.sublime-settings",
+		"/C/CAE/Sublime Text/Data/Packages/View In Browser/View In Browser.sublime-settings",
+		"/C/inetpub/wwwroot/nagiosdashboard/sampleinput.csv",
+		"/C/CAE/Sublime Text/Data/Packages/User/npm.sublime-settings",
+		"/C/CAE/Sublime Text/Data/Packages/npm/npm.sublime-settings",
+		"/C/inetpub/wwwroot/nagiosdashboard_master/sampleinput.csv",
+		"/C/inetpub/wwwroot/nagiosdashboard_master/css/nagiosdb.css",
+		"/C/CAE/Sublime Text/Data/Packages/GoSublime/CHANGELOG.md",
+		"/C/CAE/Sublime Text/Data/Packages/GoSublime/USAGE.md",
+		"/C/Users/c83265/Desktop/sdas",
+		"/C/inetpub/wwwroot/nagiosdashboard_master/amcharts_prototype.htm",
+		"/C/inetpub/wwwroot/nagiosdashboard_master/js/justgage.js",
+		"/C/inetpub/wwwroot/nagiosdashboard_master/dashboard.htm.bak",
+		"/A/99_Miscellaneous/01_Access/varios.txt",
+		"/C/inetpub/wwwroot/nagiosdashboard_master/lib/amcharts.js",
+		"/C/inetpub/wwwroot/nagiosdashboard_master/lib/serial.js",
+		"/C/Users/c83265/Desktop/plain.txt",
+		"/C/inetpub/wwwroot/nagiosdashboard_master/js/nagiosdb.js",
+		"/C/inetpub/wwwroot/nagiosdashboard_master/dashboard.htm",
+		"/C/Users/c83265/AppData/Local/Temp/7zOCE4CD79A/ReadMe.txt",
+		"/J/WORKAREA/98_Dev/shell_script/blade/crea_usu_blade.sh",
+		"/C/Users/c83265/Desktop/multivac3.xlaunch",
+		"//multivac3/joaquin/WORKAREA/98_Dev/shell_script/blade/crea_usu_blade.sh",
+		"//gpr3044l/c$/Opt/IBM/Rational/Statemate/4.6.1/StateMateRemoteApp.bat",
+		"//gpr3044l/c$/Opt/IBM/Rational/Statemate/4.6.1/bin/run_stmm.bat",
+		"//gpr3044l/c$/Users/c83265.EADSCASA/Desktop/StateMateRemoteApp.bat",
+		"/I/Repositorio/PUBLISHER_APPLICATIONS/BROMIUM/VSENTRY/3.2.0.13333/maquinasVTX.txt",
+		"/C/Users/c83265/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/E6L82EAN/username_and_hddsn_Pablo_Ibañez.txt",
+		"/C/Users/c83265/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/E6L82EAN/username_and_hddsn_Jose_Ramon_Sainz.txt",
+		"//gpr3044l/c$/Users/Public/Desktop/StateMateRemApp.bat",
+		"//gpr3044l/c$/Users/c83265.EADSCASA/Desktop/asd.bat",
+		"//gpr3044l/c$/Opt/IBM/Rational/Statemate/4.6.1/bin/run_stmm_test.bat",
+		"/C/Users/c83265/Desktop/run_stmm.bat",
+		"//gpr3044l/c$/Users/Administrator/Desktop/StateMateRemApp.bat",
+		"/C/Users/c83265/Desktop/StateMateRemApp.bat",
+		"/C/Program Files (x86)/FireCMD/readme.txt",
+		"//gpr3044l/c$/Users/c83265/lñasd.txt",
+		"//gpr3044l/c$/Users/c83265/sadlñk.txt",
+		"/C/CAE/MATLAB/R14SP3/sys/java/jre/win32/jre.cfg",
+		"/C/Users/c83265/Desktop/matlab R14SP3.bat",
+		"/C/inetpub/wwwroot/nagiosdashboard_master/js/chartjs.js",
+		"/S/microsoft/VS_2017_Professional/Licencia.txt",
+		"/S/matlab/PLP.txt",
+		"/S/matlab/PLP_union_licencias.txt",
+		"/S/matlab/R14sp2/PLP.txt",
+		"/S/microsoft/VS_2017_Professional/instalacion .txt",
+		"/C/inetpub/wwwroot/nagiosdashboard_master/js/canvasjs.js",
+		"/C/Users/c83265/AppData/Local/Temp/7zO0DD8B07D/instruction.txt",
+		"/C/Users/c83265/AppData/Roaming/Sun/SSGD/hostsvisited",
+		"/C/inetpub/wwwroot/nagiosdashboard/dashboard2.htm",
+		"/C/inetpub/wwwroot/nagiosdashboard/css/nagiosdb2.css",
+		"/C/inetpub/wwwroot/nagiosdashboard/css/nagiosdb.css",
+		"/C/inetpub/wwwroot/gauge_meters/js/gm-justgage.js",
+		"/C/Users/c83265/Desktop/Chart.js-master/src/chart.js",
+		"/C/inetpub/wwwroot/gauge_meters/dashboard.htm",
+		"/C/inetpub/wwwroot/gauge_meters/lib/Chart.bundle.js",
+		"/C/inetpub/wwwroot/gauge_meters/css/justgage.css",
+		"/C/inetpub/wwwroot/gauge_meters/logs/cae_adm1_check_free_nodes.htm",
+		"/C/inetpub/wwwroot/gauge_meters/dashboard-justgage.htm",
+		"/C/inetpub/wwwroot/gauge_meters/logs/cae_nas1_check_home15.htm",
+		"/C/inetpub/wwwroot/gauge_meters/logs/cae_adm1_check_available_nodes.htm",
+		"/C/Users/c83265/AppData/Local/Temp/fz3temp-1/gm-justgage.js",
+		"//multivac3/intercambio/c83265/gauge_meters/js/gm-justgage.js",
+		"/C/inetpub/wwwroot/gauge_meters/js/gauge-meters-ajax.js",
+		"/C/inetpub/wwwroot/gauge_meters/js/gauge-meters-v2.js",
+		"/C/inetpub/wwwroot/tests/meters-test.htm",
+		"/C/CAE/Sublime Text/Data/Packages/sublime-github/GitHub.sublime-settings",
+		"/C/CAE/Sublime Text/Data/Packages/TortoiseSVN/TortoiseSVN.sublime-settings",
+		"/C/CAE/Sublime Text/Data/Packages/TortoiseSVN/Default (Windows).sublime-keymap",
+		"/C/inetpub/wwwroot/gauge_meters/gaugemeter.htm",
+		"/C/inetpub/wwwroot/gauge_meters/js/gauge-meters.js",
+		"/C/inetpub/wwwroot/js/gauge-meters.js",
+		"/C/inetpub/wwwroot/gaugemeter.htm",
+		"/C/inetpub/wwwroot/lib/Nuevo documento de texto.txt",
+		"/C/CAE/Sublime Text/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/c83265/Desktop/wwwroot/js/gauge-meters.js",
+		"/C/Users/c83265/Desktop/wwwroot/js/gauge.js",
+		"/W/04_DataExchange/ASTA Data Exchange.txt",
+		"/C/CAE/cmder/vendor/conemu-maximus5/ConEmu/WhatsNew-ConEmu.txt",
+		"/S/microsoft/VS_2015_professional/Pcs.txt",
+		"/C/Users/Juako/Documents/My Games/NieR_Automata/Graphic.ini",
+		"/C/Users/Juako/Documents/My Games/NieR_Automata/GameData.dat",
+		"/C/Users/Juako/Documents/My Games/NieR_Automata/SystemData.dat",
+		"/F/iso/Titanfall.2-CODEX/Titanfall2 ES Language Pack/how to do.txt",
+		"/C/Users/Juako/Documents/Respawn/Titanfall2/local/settings.cfg",
+		"/F/TEMP/7zO8A3711B9/how to do.txt",
+		"/F/iso/Titanfall.2-CODEX/Titanfall2 ES Language Pack/CODEX.ini",
+		"/F/TEMP/7zOC38FA4B6/readme.txt",
+		"/J/Titanfall 2/r2/stats.txt",
+		"/J/Titanfall 2/gameversion.txt",
+		"/J/Titanfall 2/r2/GameInfo.txt",
+		"/J/Titanfall 2/CODEX.ini",
+		"/F/iso/codex-titanfall.2/Titanfall.2.Update.v2.0.7.0-CODEX/codex.nfo",
+		"/F/iso/codex-titanfall.2/codex.nfo",
+		"/F/iso/codex-titanfall.2/README.txt",
+		"/D/Steam/steamapps/common/NieRAutomata/FAR.ini",
+		"/F/iso/Nier;Automata/mod_nier_automata_2b_partially_nude_v1_by_art_of_the_body-db3lggf/README.txt",
+		"/F/TEMP/7zO0640DD21/changelog.txt",
+		"/F/iso/Nier;Automata/Resorep 1.7.0 US/readme.txt",
+		"/F/iso/Nier;Automata/README.txt",
+		"/D/The Legend of Zelda Breath of the Wild/cemu/mlc01/usr/title/00050000/101c9500/content/Voice/Version.txt",
+		"/D/The Legend of Zelda Breath of the Wild/cemu/mlc01/sys/title/0005001b/1005c000/content/country.txt",
+		"/D/The Legend of Zelda Breath of the Wild/cemu/mlc01/sys/title/0005001b/1005c000/content/language.txt"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 125.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "dashboard.htm",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1422,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								216,
+								216
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "js/nagiosdb.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 10390,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7569,
+								7569
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4488.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "css/nagiosdb.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 718,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								259,
+								259
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 49.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				2,
+				0,
+				3,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.295286912265,
+			0.67552006552,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.GoSublime-output":
+	{
+		"height": 133.0
+	},
+	"output.MarGo-output":
+	{
+		"height": 133.0
+	},
+	"output.exec":
+	{
+		"height": 38.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 145.0
+	},
+	"output.textarea":
+	{
+		"height": 93.0
+	},
+	"pinned_build_system": "",
+	"project": "hpcd.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 2,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 194.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
