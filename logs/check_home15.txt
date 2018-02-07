@@ -1,1 +1,0 @@
-Wait time: 0.50ms	Usage: 0.20%|OK	15:20:05
