@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"sta",
+				"status-cell"
+			],
+			[
 				"borde",
 				"border-style"
 			],
@@ -219,7 +223,26 @@
 			"file": "dashboard.htm",
 			"settings":
 			{
-				"buffer_size": 1422,
+				"buffer_size": 1932,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/nagiosdb.css",
+			"settings":
+			{
+				"buffer_size": 735,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "customchecks.htm",
+			"settings":
+			{
+				"buffer_size": 4875,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -228,17 +251,6 @@
 			"settings":
 			{
 				"buffer_size": 10390,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "#wrapper{\n\twidth: 1235px;\n\theight: 200px;\n\tmargin-left: auto;\n\tmargin-right: auto;\n\tmargin-top: 25px;\n}\n\n.frame{\n\t/*margin-bottom: 300px;*/\n\tbox-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);\n\tborder-radius: 13px;\n}\n\n.gauge-meter{\n\twidth: 400px;\n\theight: 290px;\n\ttop:-50px;\n}\n\n.time-chart{\n\t\n}\n\n.hidden{\n\tvisibility: hidden;\n}\n\n.label{\n\ttext-align: center;\n\tfont: 35px EADS sans;\n\tfont-weight:bold;\n\tcolor: rgba(0,0,0,.6);\n\ttext-shadow: rgba(0,0,0,.2) 2px 6px 5px,rgba(255,255,255,.4) 0 -4px 30px;\n\tpadding-top: 15px;\n}\n\n.top-label{\n\tpadding-left: 30px;\n\tpadding-top:10px;\n\tcolor:#999999;\n\tfont: 45px EADS sans;\n\tfont-weight:bold;\n\tmargin-left: auto;\n\tmargin-right: auto;\n}\n\n/*table tr td canvas{\n\tborder: 1px solid;\n}*/",
-			"file": "css/nagiosdb.css",
-			"file_size": 767,
-			"file_write_time": 131624729676606566,
-			"settings":
-			{
-				"buffer_size": 718,
 				"line_ending": "Windows"
 			}
 		}
@@ -486,6 +498,10 @@
 	],
 	"file_history":
 	[
+		"/C/CAE/Sublime Text/Data/Packages/User/TortoiseSVN.sublime-settings",
+		"/C/CAE/Sublime Text/Data/Packages/TortoiseSVN/TortoiseSVN.sublime-settings",
+		"/C/CAE/Sublime Text/Data/Packages/User/HTMLBeautify.sublime-settings",
+		"/C/CAE/Sublime Text/Data/Packages/HTMLBeautify/HTMLBeautify.sublime-settings",
 		"/C/CAE/Sublime Text/Data/Packages/User/Default (Windows).sublime-keymap",
 		"/C/CAE/Sublime Text/Data/Packages/CodeFormatter/CodeFormatter.sublime-settings",
 		"/C/CAE/Sublime Text/Data/Packages/CodeFormatter/Default (Windows).sublime-keymap",
@@ -578,7 +594,6 @@
 		"/C/inetpub/wwwroot/gauge_meters/js/gauge-meters-v2.js",
 		"/C/inetpub/wwwroot/tests/meters-test.htm",
 		"/C/CAE/Sublime Text/Data/Packages/sublime-github/GitHub.sublime-settings",
-		"/C/CAE/Sublime Text/Data/Packages/TortoiseSVN/TortoiseSVN.sublime-settings",
 		"/C/CAE/Sublime Text/Data/Packages/TortoiseSVN/Default (Windows).sublime-keymap",
 		"/C/inetpub/wwwroot/gauge_meters/gaugemeter.htm",
 		"/C/inetpub/wwwroot/gauge_meters/js/gauge-meters.js",
@@ -610,14 +625,11 @@
 		"/F/iso/Nier;Automata/mod_nier_automata_2b_partially_nude_v1_by_art_of_the_body-db3lggf/README.txt",
 		"/F/TEMP/7zO0640DD21/changelog.txt",
 		"/F/iso/Nier;Automata/Resorep 1.7.0 US/readme.txt",
-		"/F/iso/Nier;Automata/README.txt",
-		"/D/The Legend of Zelda Breath of the Wild/cemu/mlc01/usr/title/00050000/101c9500/content/Voice/Version.txt",
-		"/D/The Legend of Zelda Breath of the Wild/cemu/mlc01/sys/title/0005001b/1005c000/content/country.txt",
-		"/D/The Legend of Zelda Breath of the Wild/cemu/mlc01/sys/title/0005001b/1005c000/content/language.txt"
+		"/F/iso/Nier;Automata/README.txt"
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 44.0
 	},
 	"find_in_files":
 	{
@@ -654,23 +666,59 @@
 				{
 					"buffer": 0,
 					"file": "dashboard.htm",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1422,
+						"buffer_size": 1932,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								216,
-								216
+								1112,
+								1112
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
+						},
+						"translation.x": 51.0,
+						"translation.y": 528.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "css/nagiosdb.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 735,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								117,
+								117
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -683,11 +731,41 @@
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
-					"buffer": 1,
+					"buffer": 2,
+					"file": "customchecks.htm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4875,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4031,
+								4031
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2794.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "js/nagiosdb.js",
 					"semi_transient": true,
 					"settings":
@@ -699,8 +777,8 @@
 						"selection":
 						[
 							[
-								7569,
-								7569
+								250,
+								250
 							]
 						],
 						"settings":
@@ -710,45 +788,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4488.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 2,
-					"file": "css/nagiosdb.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 718,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								259,
-								259
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -788,8 +831,8 @@
 		"cols":
 		[
 			0.0,
-			0.295286912265,
-			0.67552006552,
+			0.717235013376,
+			0.94608785231,
 			1.0
 		],
 		"rows":
@@ -857,7 +900,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 2,
+	"selected_group": 0,
 	"settings":
 	{
 	},
