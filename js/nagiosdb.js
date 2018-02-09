@@ -209,7 +209,7 @@ try{
     function setValue(_oWidget, _logData){
         try
         {
-            if (_logData.match(/Error|Unknown|not defined/i)===null)
+            if (_logData.match(/Error|Unknown|not defined/gi)===null)
             {
                 switch(_oWidget)
                 {
@@ -257,11 +257,24 @@ try{
                             oCaeNas1Home15PerformanceChart.validateData();
                             $("a[title='JavaScript charts']").hide();
                     break;
+
+                    case "archivo-status":
+                        _logData=_logData.match(/OK/i);
+                        var $archivoStatus = $(".archivo-status");
+                        if(_logData.toUpperCase()=="OK"){
+                            $archivoStatus.css('background-color', _green);
+                            $archivoStatus.text("OK");
+                        }
+                        else{
+                            $archivoStatus.css('background-color', _red);
+                            $archivoStatus.text("ERROR");
+                        }
+                    break;
                 }
             }
-            else{
-                window[_oWidget].refresh("NaN");
-            }
+            // else{
+            //     window[_oWidget].refresh("NaN");
+            // }
         }
         catch(ex){console.log(ex.message);}
     }
@@ -283,10 +296,11 @@ try{
 
     function updateGm(){
         try{
-            loadData("oCaeNas1Home15PerformanceChart", "cae_nas1_check_home15.htm");
-            loadData("oCaeAdm1FreeNodesGm", "cae_adm1_check_free_nodes.htm");
-            loadData("oCaeNas1Home15UsageGm", "cae_nas1_check_home15.htm");
-            loadData("oCaeNas1Home15AwaitingTimeGm", "cae_nas1_check_home15.htm");
+            // loadData("oCaeNas1Home15PerformanceChart", "cae_nas1_check_home15.htm");
+            // loadData("oCaeAdm1FreeNodesGm", "cae_adm1_check_free_nodes.htm");
+            // loadData("oCaeNas1Home15UsageGm", "cae_nas1_check_home15.htm");
+            // loadData("oCaeNas1Home15AwaitingTimeGm", "cae_nas1_check_home15.htm");
+            loadData("archivo-status", "cae_adm_check_archivo.htm");
             //oCaeNas1Home15PerformanceChart.validateData();
             //$("a[title='JavaScript charts']").hide();
         }
