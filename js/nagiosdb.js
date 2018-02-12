@@ -149,7 +149,6 @@ try{
                         "unit":"%",
                         "labelFrequency": 2,
                         "gridCount": 10
-
                     },
                     {
                         "id": "awaiting-time-axis",
@@ -209,7 +208,7 @@ try{
     function setValue(_oWidget, _logData){
         try
         {
-            if (_logData.match(/Error|Unknown|not defined/gi)===null)
+            if (_logData.match(/Unknown|not defined/gi)===null)
             {
                 switch(_oWidget)
                 {
@@ -259,8 +258,9 @@ try{
                     break;
 
                     case "archivo-status":
-                        _logData=_logData.match(/OK/i);
-                        var $archivoStatus = $(".archivo-status");
+                        _logData=String(_logData.match(/OK/i));
+                        debugger;
+                        var $archivoStatus = $("#archivo-status");
                         if(_logData.toUpperCase()=="OK"){
                             $archivoStatus.css('background-color', _green);
                             $archivoStatus.text("OK");
@@ -284,11 +284,12 @@ try{
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    var _logData = this.responseText;
-                    setValue(_oWidget, _logData);
+                    setValue(_oWidget, this.responseText);
                 }
             }
-            xhttp.open("GET", "logs/"+ _logName, true);
+            // console.log("Status: "+xhttp.Status+"\n"+"readyState: "+ xhttp.readyState+"\n"+xhttp.responseText+"\n\n");
+            // xhttp.open("GET", "logs/"+ _logName, true);
+            xhttp.open("GET","http://localhost/hpcd/logs/"+_logName, true);
             xhttp.send();
         }
         catch(ex){console.log(ex.message);}
@@ -296,10 +297,10 @@ try{
 
     function updateGm(){
         try{
-            // loadData("oCaeNas1Home15PerformanceChart", "cae_nas1_check_home15.htm");
-            // loadData("oCaeAdm1FreeNodesGm", "cae_adm1_check_free_nodes.htm");
-            // loadData("oCaeNas1Home15UsageGm", "cae_nas1_check_home15.htm");
-            // loadData("oCaeNas1Home15AwaitingTimeGm", "cae_nas1_check_home15.htm");
+            loadData("oCaeNas1Home15PerformanceChart", "cae_nas1_check_home15.htm");
+            loadData("oCaeAdm1FreeNodesGm", "cae_adm1_check_free_nodes.htm");
+            loadData("oCaeNas1Home15UsageGm", "cae_nas1_check_home15.htm");
+            loadData("oCaeNas1Home15AwaitingTimeGm", "cae_nas1_check_home15.htm");
             loadData("archivo-status", "cae_adm_check_archivo.htm");
             //oCaeNas1Home15PerformanceChart.validateData();
             //$("a[title='JavaScript charts']").hide();
