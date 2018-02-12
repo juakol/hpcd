@@ -258,16 +258,18 @@ try{
                     break;
 
                     case "archivo-status":
-                        _logData=String(_logData.match(/OK/i));
-                        debugger;
+                        _logData=String(_logData.match(/OK|CRITICAL/i));
                         var $archivoStatus = $("#archivo-status");
-                        if(_logData.toUpperCase()=="OK"){
-                            $archivoStatus.css('background-color', _green);
-                            $archivoStatus.text("OK");
-                        }
-                        else{
-                            $archivoStatus.css('background-color', _red);
-                            $archivoStatus.text("ERROR");
+                        switch(_logData){
+                            case "OK":
+                                $archivoStatus.css('background-color', _green);
+                                $archivoStatus.text("OK");
+                            break;
+
+                            case "CRITICAL":
+                                $archivoStatus.css('background-color', _red);
+                                $archivoStatus.text("ERROR");
+                            break;
                         }
                     break;
                 }
@@ -302,6 +304,8 @@ try{
             loadData("oCaeNas1Home15UsageGm", "cae_nas1_check_home15.htm");
             loadData("oCaeNas1Home15AwaitingTimeGm", "cae_nas1_check_home15.htm");
             loadData("archivo-status", "cae_adm_check_archivo.htm");
+            //loadData("tarantella-status, mln2_check_OSGD.htm");
+           
             //oCaeNas1Home15PerformanceChart.validateData();
             //$("a[title='JavaScript charts']").hide();
         }
@@ -310,5 +314,4 @@ try{
 
     setInterval(function(){updateGm();}, 60000);
 }
-
 catch(ex){console.log(ex.message);}
