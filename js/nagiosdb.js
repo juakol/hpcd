@@ -272,6 +272,24 @@ try{
                             break;
                         }
                     break;
+
+                    case "tarantella-status":
+                        debugger;
+                        var perfData=_logData.match(/Accepting/g);
+                        for (i=1;i<=3;i++){
+                            switch(perfData[i-1]){
+                                case "Accepting":
+                                    $("#tarantella-status"+i).css('background-color', _green);
+                                    $("#tarantella-status"+i).text('OK');                                        
+                                break;
+
+                                case "Culomancia":
+                                    $("#tarantella-status"+i).css('background-color', _red);
+                                    $("#tarantella-status"+i).text('ERROR');                                        
+                                break;
+                            }
+                        }
+                    break;
                 }
             }
             // else{
@@ -304,7 +322,7 @@ try{
             loadData("oCaeNas1Home15UsageGm", "cae_nas1_check_home15.htm");
             loadData("oCaeNas1Home15AwaitingTimeGm", "cae_nas1_check_home15.htm");
             loadData("archivo-status", "cae_adm_check_archivo.htm");
-            //loadData("tarantella-status, mln2_check_OSGD.htm");
+            loadData("tarantella-status", "mln2_check_osgd.htm");
            
             //oCaeNas1Home15PerformanceChart.validateData();
             //$("a[title='JavaScript charts']").hide();
