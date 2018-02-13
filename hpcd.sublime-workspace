@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"per",
+				"perfData"
+			],
+			[
+				"_L",
+				"_logData"
+			],
+			[
+				"_lo",
+				"_logData"
+			],
+			[
+				"_",
+				"_logData"
+			],
+			[
+				"ready",
+				"readyState"
+			],
+			[
+				"arch",
+				"archivoStatus"
+			],
+			[
+				"load",
+				"loadData"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"t",
+				"table"
+			],
+			[
+				"th",
+				"th\tTag"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"alig",
+				"align-items"
+			],
+			[
+				"al",
+				"text-align"
+			],
+			[
 				"sta",
 				"status-cell"
 			],
@@ -14,10 +66,6 @@
 			[
 				"margi",
 				"margin-top"
-			],
-			[
-				"mar",
-				"margin-right"
 			],
 			[
 				"margin",
@@ -50,14 +98,6 @@
 			[
 				"iT",
 				"iTimeUnitRange"
-			],
-			[
-				"_L",
-				"_logName"
-			],
-			[
-				"_lo",
-				"_logName"
 			],
 			[
 				"log",
@@ -133,10 +173,6 @@
 			],
 			[
 				"_g",
-				"_Gm"
-			],
-			[
-				"_",
 				"_Gm"
 			],
 			[
@@ -223,25 +259,7 @@
 			"file": "dashboard.htm",
 			"settings":
 			{
-				"buffer_size": 1932,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "css/nagiosdb.css",
-			"settings":
-			{
-				"buffer_size": 735,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "customchecks.htm",
-			"settings":
-			{
-				"buffer_size": 4875,
+				"buffer_size": 2257,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -250,7 +268,44 @@
 			"file": "js/nagiosdb.js",
 			"settings":
 			{
-				"buffer_size": 10390,
+				"buffer_size": 12333,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "logs/mln2_check_osgd.htm",
+			"settings":
+			{
+				"buffer_size": 252,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "logs/cae_adm_check_archivo.htm",
+			"settings":
+			{
+				"buffer_size": 34,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/nagiosdb.css",
+			"settings":
+			{
+				"buffer_size": 822,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "customchecks02.htm",
+			"settings":
+			{
+				"buffer_size": 4871,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -263,9 +318,17 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "pa",
+		"last_filter": "gits",
 		"selected_items":
 		[
+			[
+				"gits",
+				"GitSavvy: help"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
 			[
 				"pa",
 				"Package Control: Remove Package"
@@ -447,10 +510,6 @@
 				"Package Control: Install Package"
 			],
 			[
-				"packa",
-				"Package Control: Remove Package"
-			],
-			[
 				"vintage",
 				"Vintageous: Toggle Vim Ctrl Keys"
 			],
@@ -467,13 +526,15 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 412.0
+		"width": 444.0
 	},
 	"console":
 	{
-		"height": 222.0,
+		"height": 69.0,
 		"history":
 		[
+			"GitSavvy: help",
+			"gitsavvy:help",
 			"npm",
 			"echo",
 			"npm",
@@ -494,12 +555,18 @@
 	[
 		"/C/inetpub/wwwroot/hpcd",
 		"/C/inetpub/wwwroot/hpcd/css",
-		"/C/inetpub/wwwroot/hpcd/js"
+		"/C/inetpub/wwwroot/hpcd/js",
+		"/C/inetpub/wwwroot/hpcd/logs"
 	],
 	"file_history":
 	[
-		"/C/CAE/Sublime Text/Data/Packages/User/TortoiseSVN.sublime-settings",
+		"/C/inetpub/wwwroot/hpcd/logs/cae_adm_check_archivo.htm",
+		"/C/inetpub/wwwroot/hpcd/css/nagiosdb.css",
+		"/C/inetpub/wwwroot/hpcd/js/nagiosdb.js",
+		"/C/inetpub/wwwroot/hpcd/customchecks02.htm",
+		"/C/inetpub/wwwroot/hpcd/dashboard.htm",
 		"/C/CAE/Sublime Text/Data/Packages/TortoiseSVN/TortoiseSVN.sublime-settings",
+		"/C/CAE/Sublime Text/Data/Packages/User/TortoiseSVN.sublime-settings",
 		"/C/CAE/Sublime Text/Data/Packages/User/HTMLBeautify.sublime-settings",
 		"/C/CAE/Sublime Text/Data/Packages/HTMLBeautify/HTMLBeautify.sublime-settings",
 		"/C/CAE/Sublime Text/Data/Packages/User/Default (Windows).sublime-keymap",
@@ -620,12 +687,7 @@
 		"/J/Titanfall 2/CODEX.ini",
 		"/F/iso/codex-titanfall.2/Titanfall.2.Update.v2.0.7.0-CODEX/codex.nfo",
 		"/F/iso/codex-titanfall.2/codex.nfo",
-		"/F/iso/codex-titanfall.2/README.txt",
-		"/D/Steam/steamapps/common/NieRAutomata/FAR.ini",
-		"/F/iso/Nier;Automata/mod_nier_automata_2b_partially_nude_v1_by_art_of_the_body-db3lggf/README.txt",
-		"/F/TEMP/7zO0640DD21/changelog.txt",
-		"/F/iso/Nier;Automata/Resorep 1.7.0 US/readme.txt",
-		"/F/iso/Nier;Automata/README.txt"
+		"/F/iso/codex-titanfall.2/README.txt"
 	],
 	"find":
 	{
@@ -640,9 +702,13 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
+			"debugger",
+			"Show all",
+			"show all",
+			"<div class=\"frame table\" style=\"float:left;\">\n\t\t\t\t<table>\n\t\t\t\t\t<thead>\n\t\t\t\t\t\t<th colspan=\"2\">Quotas</th>\n\t\t\t\t\t</thead>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<th>Group</th>\n\t\t\t\t\t\t<th>Days left</th>\n\t\t\t\t\t</tr>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td></td>\n\t\t\t\t\t\t<td></td>\n\t\t\t\t\t</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -669,25 +735,26 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1932,
+						"buffer_size": 2257,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1112,
-								1112
+								705,
+								705
 							]
 						],
 						"settings":
 						{
+							"git_savvy.repo_path": "C:\\inetpub\\wwwroot\\hpcd",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"translate_tabs_to_spaces": false,
 							"word_wrap": false
 						},
-						"translation.x": 51.0,
-						"translation.y": 528.0,
+						"translation.x": 0.0,
+						"translation.y": 66.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -701,97 +768,156 @@
 			[
 				{
 					"buffer": 1,
-					"file": "css/nagiosdb.css",
+					"file": "js/nagiosdb.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 735,
+						"buffer_size": 12333,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								117,
-								117
+								9649,
+								9745
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"git_savvy.repo_path": "C:\\inetpub\\wwwroot\\hpcd",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5676.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 2,
-					"file": "customchecks.htm",
+					"file": "logs/mln2_check_osgd.htm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4875,
+						"buffer_size": 252,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4031,
-								4031
+								162,
+								82
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2794.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "js/nagiosdb.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 10390,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								250,
-								250
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"git_savvy.repo_path": "C:\\inetpub\\wwwroot\\hpcd",
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "logs/cae_adm_check_archivo.htm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 34,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24,
+								24
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "css/nagiosdb.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 822,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								278,
+								119
+							]
+						],
+						"settings":
+						{
+							"git_savvy.repo_path": "C:\\inetpub\\wwwroot\\hpcd",
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 794.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "customchecks02.htm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4871,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3559,
+								3629
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8118.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -831,8 +957,8 @@
 		"cols":
 		[
 			0.0,
-			0.717235013376,
-			0.94608785231,
+			0.664878177117,
+			0.775142255144,
 			1.0
 		],
 		"rows":
@@ -907,8 +1033,8 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 194.0,
+	"side_bar_visible": false,
+	"side_bar_width": 257.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
