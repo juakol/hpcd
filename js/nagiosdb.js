@@ -274,18 +274,17 @@ try{
                     break;
 
                     case "tarantella-status":
-                        debugger;
                         var perfData=_logData.match(/Accepting/g);
                         for (i=1;i<=3;i++){
                             switch(perfData[i-1]){
                                 case "Accepting":
-                                    $("#tarantella-status"+i).css('background-color', _green);
-                                    $("#tarantella-status"+i).text('OK');                                        
+                                    $("#tarantella-status-"+i).css('background-color', _green);
+                                    $("#tarantella-status-"+i).text('mln'+i+' OK');                                        
                                 break;
 
                                 case "Culomancia":
-                                    $("#tarantella-status"+i).css('background-color', _red);
-                                    $("#tarantella-status"+i).text('ERROR');                                        
+                                    $("#tarantella-status-"+i).css('background-color', _red);
+                                    $("#tarantella-status-"+i).text('mln'+i+' ERROR');                                        
                                 break;
                             }
                         }
