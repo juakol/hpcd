@@ -11,9 +11,9 @@ try{
     var oHome15PerformanceData = [];
 
     //Some basic colors
-    var _green = "#a9d70b";
+    var _green = "#86DC00";
     var _yellow ="#f9c802";
-    var _red = "#ff0000";
+    var _red = "#FF003C";
 
     //Default options for gauge meters
     var dfltOpts = {
