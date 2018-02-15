@@ -307,8 +307,8 @@ try{
                 }
             }
             // console.log("Status: "+xhttp.Status+"\n"+"readyState: "+ xhttp.readyState+"\n"+xhttp.responseText+"\n\n");
-            // xhttp.open("GET", "logs/"+ _logName, true);
-            xhttp.open("GET","http://localhost/hpcd/logs/"+_logName, true);
+            xhttp.open("GET", "logs/"+ _logName, true);
+            //xhttp.open("GET","http://localhost/hpcd/logs/"+_logName, true);
             xhttp.send();
         }
         catch(ex){console.log(ex.message);}
