@@ -273,15 +273,16 @@ try{
                     break;
 
                     case "tarantella-status":
-                        var perfData=_logData.match(/Accepting/g);
-                        for (i=1;i<=3;i++){
+                    debugger;
+                        var perfData=_logData.match(/Accepting|NOT/g);
+                        for (i=1;i<=perfData.length;i++){
                             switch(perfData[i-1]){
                                 case "Accepting":
                                     $("#tarantella-status-"+i).css('background-color', _green);
                                     $("#tarantella-status-"+i).text('mln'+i+' OK');                                        
                                 break;
 
-                                case "Culomancia":
+                                case "NOT":
                                     $("#tarantella-status-"+i).css('background-color', _red);
                                     $("#tarantella-status-"+i).text('mln'+i+' ERROR');                                        
                                 break;
