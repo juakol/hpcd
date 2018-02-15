@@ -273,7 +273,6 @@ try{
                     break;
 
                     case "tarantella-status":
-                    debugger;
                         var perfData=_logData.match(/Accepting|NOT/g);
                         for (i=1;i<=perfData.length;i++){
                             switch(perfData[i-1]){
@@ -288,6 +287,11 @@ try{
                                 break;
                             }
                         }
+                    break;
+
+                    case "queue-status":
+                        debugger;
+                        $("#queue-status").text(String(_logData.match(/[0-9]+/))+" queued jobs");
                     break;
                 }
             }
@@ -321,7 +325,7 @@ try{
             loadData("oCaeNas1Home15AwaitingTimeGm", "cae_nas1_check_home15.htm");
             loadData("archivo-status", "cae_adm_check_archivo.htm");
             loadData("tarantella-status", "mln2_check_osgd.htm");
-           
+            loadData("queue-status", "cae_adm1_check_queued_jobs.htm");
             //oCaeNas1Home15PerformanceChart.validateData();
             //$("a[title='JavaScript charts']").hide();
         }
