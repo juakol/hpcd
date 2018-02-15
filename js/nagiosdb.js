@@ -259,16 +259,15 @@ try{
 
                     case "archivo-status":
                         _logData=String(_logData.match(/OK|CRITICAL/i));
-                        var $archivoStatus = $("#archivo-status");
                         switch(_logData){
                             case "OK":
-                                $archivoStatus.css('background-color', _green);
-                                $archivoStatus.text("OK");
+                                $("#archivo-status").css('background-color', _green);
+                                $("#archivo-status").text("OK");
                             break;
 
                             case "CRITICAL":
-                                $archivoStatus.css('background-color', _red);
-                                $archivoStatus.text("ERROR");
+                                $("#archivo-status").css('background-color', _red);
+                                $("#archivo-status").text("ERROR");
                             break;
                         }
                     break;
@@ -308,7 +307,6 @@ try{
             }
             // console.log("Status: "+xhttp.Status+"\n"+"readyState: "+ xhttp.readyState+"\n"+xhttp.responseText+"\n\n");
             xhttp.open("GET", "logs/"+ _logName, true);
-            //xhttp.open("GET","http://localhost/hpcd/logs/"+_logName, true);
             xhttp.send();
         }
         catch(ex){console.log(ex.message);}
