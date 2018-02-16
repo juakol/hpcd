@@ -10,14 +10,21 @@ table{
 	margin-right: auto;
 }
 
+#services-div{
+	height: 236px;
+	width: 363px
+}
+
 #cae-nas1-home15-performance-chart {
 	float:right; width: 100%;
-	height: 300px;
+	height: 500px;
 }
 
 .table{
 	padding: 20px;
 	border-collapse: collapse;
+	width: 100%;
+	height: 100%;
 }
 
 .table th, .table td {
@@ -30,8 +37,6 @@ table{
 	border-radius: 13px;
 	margin-top:20px
 }
-
-
 
 .gauge-meter{
 	width: 400px;

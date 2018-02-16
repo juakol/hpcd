@@ -290,7 +290,6 @@ try{
                     break;
 
                     case "queue-status":
-                        debugger;
                         $("#queue-status").text(String(_logData.match(/[0-9]+/))+" queued jobs");
                     break;
                 }
