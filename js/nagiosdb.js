@@ -1,6 +1,6 @@
 try{
     //Gauge meters objects
-    var oCaeAdm1FreeNodesGm;
+    // var oCaeAdm1FreeNodesGm;
     var oCaeNas1Home15UsageGm;
     var oCaeNas1Home15AwaitingTimeGm;
 
@@ -35,27 +35,27 @@ try{
 
     $(document).ready(function(){
         try{
-            oCaeAdm1FreeNodesGm = new JustGage({
-                id: 'cae-adm1-check-free-nodes-gm',
-                name :'oCaeAdm1freeNodesGm',
-                title: 'free nodes',
-                max: 90,
-                decimals: 0,
-                customSectors: [{
-                    color : _red,
-                    lo : 0,
-                    hi : 5
-                },{
-                    color : _yellow,
-                    lo : 6,
-                    hi : 10
-                },{
-                    color : _green,
-                    lo : 11,
-                    hi : 200
-                }],
-                defaults: dfltOpts
-            });
+            // oCaeAdm1FreeNodesGm = new JustGage({
+            //     id: 'cae-adm1-check-free-nodes-gm',
+            //     name :'oCaeAdm1freeNodesGm',
+            //     title: 'free nodes',
+            //     max: 90,
+            //     decimals: 0,
+            //     customSectors: [{
+            //         color : _red,
+            //         lo : 0,
+            //         hi : 5
+            //     },{
+            //         color : _yellow,
+            //         lo : 6,
+            //         hi : 10
+            //     },{
+            //         color : _green,
+            //         lo : 11,
+            //         hi : 200
+            //     }],
+            //     defaults: dfltOpts
+            // });
 
             oCaeNas1Home15UsageGm = new JustGage({
                 id: 'cae-nas1-check-home15-usage-gm',
@@ -97,7 +97,7 @@ try{
                   defaults: dfltOpts
               });
 
-            oCaeNas1Home15PerformanceChart = AmCharts.makeChart("cae-nas1-home15-performance-chart",{
+            oCaeNas1Home15PerformanceChart = AmCharts.makeChart("home15-performance-chart",{
                 "type": "serial",
                 "categoryField": "date",
                 "columnSpacing": 4,
@@ -212,13 +212,13 @@ try{
             {
                 switch(_oWidget)
                 {
-                    case "oCaeAdm1FreeNodesGm":
-                        _logData = _logData.match(/[0-9]+/g);
-                        iFreeNodes = _logData[0];
-                        iTotalNodes = _logData[1];
+                    // case "oCaeAdm1FreeNodesGm":
+                    //     _logData = _logData.match(/[0-9]+/g);
+                    //     iFreeNodes = _logData[0];
+                    //     iTotalNodes = _logData[1];
                     
-                        window[_oWidget].refresh(iFreeNodes, iTotalNodes);
-                    break;
+                    //     window[_oWidget].refresh(iFreeNodes, iTotalNodes);
+                    // break;
 
                     case "oCaeNas1Home15UsageGm":
                         _logData =_logData.match(/[0-9]+\.[0-9]{2}/g);
@@ -310,7 +310,8 @@ try{
                 }
             }
             // console.log("Status: "+xhttp.Status+"\n"+"readyState: "+ xhttp.readyState+"\n"+xhttp.responseText+"\n\n");
-            xhttp.open("GET", "logs/"+ _logName, true);
+            xhttp.open("GET", "http://cae-adm.eadscasa.casa.corp:8880/nagios/logs/"+_logName, true);
+            //xhttp.open("GET", "logs/"+ _logName, true);
             xhttp.send();
         }
         catch(ex){console.log(ex.message);}
@@ -319,7 +320,7 @@ try{
     function updateGm(){
         try{
             loadData("oCaeNas1Home15PerformanceChart", "cae_nas1_check_home15.htm");
-            loadData("oCaeAdm1FreeNodesGm", "cae_adm1_check_free_nodes.htm");
+            // loadData("oCaeAdm1FreeNodesGm", "cae_adm1_check_free_nodes.htm");
             loadData("oCaeNas1Home15UsageGm", "cae_nas1_check_home15.htm");
             loadData("oCaeNas1Home15AwaitingTimeGm", "cae_nas1_check_home15.htm");
             loadData("archivo-status", "cae_adm_check_archivo.htm");
