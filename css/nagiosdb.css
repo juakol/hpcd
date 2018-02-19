@@ -17,7 +17,7 @@ table{
 
 #home15-performance-chart {
 	float:right; width: 100%;
-	height: 370px;
+	height: 450px;
 }
 
 .table{
@@ -65,8 +65,4 @@ table{
 	font-weight:bold;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.group{
-	width: 50px;
 }
