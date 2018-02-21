@@ -1,6 +1,5 @@
 try{
     //Gauge meters objects
-    // var oCaeAdm1FreeNodesGm;
     var oCaeNas1Home15UsageGm;
     var oCaeNas1Home15AwaitingTimeGm;
 
@@ -11,9 +10,9 @@ try{
     var oHome15PerformanceData = [];
 
     //Some basic colors
-    var _green = "#a9d70b";
+    var _green = "#A6E22C";
     var _yellow ="#f9c802";
-    var _red = "#ff0000";
+    var _red = "#FF003B";
 
     //Default options for gauge meters
     var dfltOpts = {
@@ -35,28 +34,6 @@ try{
 
     $(document).ready(function(){
         try{
-            // oCaeAdm1FreeNodesGm = new JustGage({
-            //     id: 'cae-adm1-check-free-nodes-gm',
-            //     name :'oCaeAdm1freeNodesGm',
-            //     title: 'free nodes',
-            //     max: 90,
-            //     decimals: 0,
-            //     customSectors: [{
-            //         color : _red,
-            //         lo : 0,
-            //         hi : 5
-            //     },{
-            //         color : _yellow,
-            //         lo : 6,
-            //         hi : 10
-            //     },{
-            //         color : _green,
-            //         lo : 11,
-            //         hi : 200
-            //     }],
-            //     defaults: dfltOpts
-            // });
-
             oCaeNas1Home15UsageGm = new JustGage({
                 id: 'cae-nas1-check-home15-usage-gm',
                 title: 'home15 usage',
@@ -178,10 +155,31 @@ try{
             });
             oCaeNas1Home15PerformanceChart.validateData();
             $("a[title='JavaScript charts']").hide();
+
+            initializeQuotasTable();
+
             updateGm();
         }
         catch(ex){console.log(ex.message);}
     });
+
+    function initializeQuotasTable(){
+        try{
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var oQuotas=JSON.parse(this.responseText);
+                    debugger;
+                    for (i=0;i<=oQuotas.length-1;i++){
+                        //console.log(oQuotas[i].grupo+", "+oQuotas[i].quedan+"\n"); 
+                    }
+                }
+            }
+            xhttp.open("GET", "http://cae-adm.eadscasa.casa.corp:8880/nagios/logs/cae_adm_check_quotas.htm", true);
+            xhttp.send();  
+        }
+        catch(ex){console.log(ex.message);}
+    }
 
     function initializeChartData(oDataProvider, iTimeInterval){
         try{
@@ -212,14 +210,6 @@ try{
             {
                 switch(_oWidget)
                 {
-                    // case "oCaeAdm1FreeNodesGm":
-                    //     _logData = _logData.match(/[0-9]+/g);
-                    //     iFreeNodes = _logData[0];
-                    //     iTotalNodes = _logData[1];
-                    
-                    //     window[_oWidget].refresh(iFreeNodes, iTotalNodes);
-                    // break;
-
                     case "oCaeNas1Home15UsageGm":
                         _logData =_logData.match(/[0-9]+\.[0-9]{2}/g);
                         if(parseFloat(_logData[1])>100.00){_logData[1]=100.00;}
@@ -309,7 +299,6 @@ try{
                     setValue(_oWidget, this.responseText);
                 }
             }
-            // console.log("Status: "+xhttp.Status+"\n"+"readyState: "+ xhttp.readyState+"\n"+xhttp.responseText+"\n\n");
             xhttp.open("GET", "http://cae-adm.eadscasa.casa.corp:8880/nagios/logs/"+_logName, true);
             //xhttp.open("GET", "logs/"+ _logName, true);
             xhttp.send();
@@ -320,12 +309,12 @@ try{
     function updateGm(){
         try{
             loadData("oCaeNas1Home15PerformanceChart", "cae_nas1_check_home15.htm");
-            // loadData("oCaeAdm1FreeNodesGm", "cae_adm1_check_free_nodes.htm");
             loadData("oCaeNas1Home15UsageGm", "cae_nas1_check_home15.htm");
             loadData("oCaeNas1Home15AwaitingTimeGm", "cae_nas1_check_home15.htm");
             loadData("archivo-status", "cae_adm_check_archivo.htm");
             loadData("tarantella-status", "mln2_check_osgd.htm");
             loadData("queue-status", "cae_adm1_check_queued_jobs.htm");
+            loadData("quotas-status", "cae_adm_check_quotas.htm");
             //oCaeNas1Home15PerformanceChart.validateData();
             //$("a[title='JavaScript charts']").hide();
         }
