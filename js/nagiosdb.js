@@ -10,9 +10,9 @@ try{
     var oHome15PerformanceData = [];
 
     //Some basic colors
-    var _green = "#A6E22C";
+    var _green = "#a9d70b";
     var _yellow ="#f9c802";
-    var _red = "#FF003B";
+    var _red = "#FF0E41";
 
     //Default options for gauge meters
     var dfltOpts = {
@@ -50,8 +50,8 @@ try{
                     hi : 99.99
                   },{
                     color : _red,
-                    lo : 100.00,
-                    hi : 100.00
+                    lo : 99.99,
+                    hi : 101.00
                   }],
                   defaults: dfltOpts
             });
@@ -69,7 +69,7 @@ try{
                   },{
                     color : _red,
                     lo : 5.99,
-                    hi : 10.00
+                    hi : 2000.00
                   }], 
                   defaults: dfltOpts
               });
@@ -167,12 +167,30 @@ try{
         try{
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var oQuotas=JSON.parse(this.responseText);
-                    debugger;
-                    for (i=0;i<=oQuotas.length-1;i++){
-                        //console.log(oQuotas[i].grupo+", "+oQuotas[i].quedan+"\n"); 
-                    }
+                if (this.readyState == 4 && this.status == 200){
+                    var iGroupsPerRow = 8;
+                    var oQuotas = JSON.parse(this.responseText);
+                    var oTable = document.getElementById("quotas-table");
+                    var oRow, oCellGrupo, oCellQuedan;
+                    var iTotalRows = Math.ceil(oQuotas.length/iGroupsPerRow);
+                    var i = j = 0;
+                    while(j < iTotalRows){
+                        oRow = oTable.insertRow(oTable.rows.length);
+                        var k = 0;
+                        while(k < iGroupsPerRow*2 && i < oQuotas.length){
+                            oCellGrupo = oRow.insertCell(k++);
+                            oCellQuedan = oRow.insertCell(k++);
+                            
+                            oCellGrupo.className = "grupo-cell";
+                            oCellGrupo.id = oCellGrupo.innerText = oQuotas[i].grupo;
+                             
+                            oCellQuedan.className = "quedan-cell";
+                            oCellQuedan.innerText = oQuotas[i].quedan;
+                            oCellQuedan.id = oQuotas[i].grupo+"-status";
+                            i++;
+                        }
+                        j++;
+                    } 
                 }
             }
             xhttp.open("GET", "http://cae-adm.eadscasa.casa.corp:8880/nagios/logs/cae_adm_check_quotas.htm", true);
@@ -284,9 +302,6 @@ try{
                     break;
                 }
             }
-            // else{
-            //     window[_oWidget].refresh("NaN");
-            // }
         }
         catch(ex){console.log(ex.message);}
     }

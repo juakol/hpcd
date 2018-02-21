@@ -28,7 +28,7 @@
 						<td rowspan="4">Tarantella</td>					
 						<td class="status-cell" id="tarantella-status-1"></td>
 					</tr>
-					<tr>
+					<tr> 
 						<td class="status-cell" id="tarantella-status-2"></td>
 					</tr>
 					<tr>
@@ -45,22 +45,25 @@
 			</div>
 			<div class="frame" style="float:right">
 				<table>
-					<tr>
-						<td>
-							 <div class="gauge-meter" id="cae-nas1-check-home15-usage-gm"></div>
-						</td>
-						<td>
-							<div class="gauge-meter" id="cae-nas1-check-home15-awaiting-time-gm"></div>
-						</td>
-					</tr>
+					<tbody>
+						<tr>
+							<td>
+								 <div class="gauge-meter" id="cae-nas1-check-home15-usage-gm"></div>
+							</td>
+							<td>
+								<div class="gauge-meter" id="cae-nas1-check-home15-awaiting-time-gm"></div>
+							</td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 			<div class="frame chart" id="home15-performance-chart"></div>
-			<div class="frame table" id="quotas-table" style="float:left;width: 1196px">
-				<table class=table>
+			<div class="frame table" id="quotas-div" style="float:left;width: 1196px">
+				<table class="table" >
 					<tr>
-						<td colspan="16">SOFT QUOTAS</td>
-					</tr>						
+						<th colspan="16">SOFT QUOTAS</th>
+					</tr>
+					<tbody id="quotas-table"></tbody>				
 				</table>
 			</div>
 		</div>
