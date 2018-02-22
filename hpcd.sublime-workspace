@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"status",
+				"statusCell"
+			],
+			[
+				"grupo",
+				"grupoCell"
+			],
+			[
+				"stat",
+				"statusCell"
+			],
+			[
+				"inner",
+				"innerText"
+			],
+			[
+				"cell",
+				"cellQuedan"
+			],
+			[
+				"insert",
+				"insertCell"
+			],
+			[
+				"cae_adm",
+				"cae_adm_check_quotas"
+			],
+			[
+				"cae",
+				"cae_adm_check_quotas"
+			],
+			[
+				"border",
+				"border-style"
+			],
+			[
 				"perf",
 				"perfData"
 			],
@@ -248,10 +284,6 @@
 				"cae_adm1-check-available-nodes-canvas"
 			],
 			[
-				"cae_adm",
-				"cae_adm1-check-available-nodes-canvas"
-			],
-			[
 				"oCaeA",
 				"oCaeAdm1CheckAvailableNodesGm"
 			],
@@ -271,7 +303,7 @@
 			"file": "dashboard.htm",
 			"settings":
 			{
-				"buffer_size": 2398,
+				"buffer_size": 2201,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -280,43 +312,36 @@
 			"file": "js/nagiosdb.js",
 			"settings":
 			{
-				"buffer_size": 12240,
+				"buffer_size": 14149,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "logs/mln2_check_osgd.htm",
+			"file": "logs/cae_adm_check_quotas.htm",
 			"settings":
 			{
-				"buffer_size": 339,
+				"buffer_size": 1258,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/CAE/Sublime Text/Data/Packages/ColorPicker/ColorPicker.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 240,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "logs/cae_adm_check_archivo.htm",
-			"settings":
-			{
-				"buffer_size": 34,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
+			"contents": "table{\n\ttext-align: center;\n\tvertical-align:middle;\n}\n\n#wrapper{\n\twidth: 1235px;\n\t/*height: 200px;*/\n\tmargin-left: auto;\n\tmargin-right: auto;\n}\n\n#services-div{\n\theight: 236px;\n\twidth: 363px\n}\n\n#home15-performance-chart {\n\tfloat:right; width: 100%;\n\theight: 370px;\n}\n\n.table{\n\tpadding: 20px;\n\tborder-collapse: collapse;\n\twidth: 100%;\n\theight: 100%;\n}\n\n.table th, .table td {\n\tborder: 1px solid;\n}\n\n.frame{\n\t/*margin-bottom: 300px;*/\n\tbox-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);\n\tborder-radius: 13px;\n\tmargin-top:20px\n}\n\n.gauge-meter{\n\twidth: 400px;\n\theight: 270px;\n\ttop:-50px;\n}\n\n.hidden{\n\tvisibility: hidden;\n}\n\n.label{\n\ttext-align: center;\n\tfont: 35px EADS sans;\n\tfont-weight:bold;\n\tcolor: rgba(0,0,0,.6);\n\ttext-shadow: rgba(0,0,0,.2) 2px 6px 5px,rgba(255,255,255,.4) 0 -4px 30px;\n\tpadding-top: 15px;\n}\n\n.top-label{\n\tpadding-left: 30px;\n\tpadding-top:10px;\n\tcolor:#999999;\n\tfont: 45px EADS sans;\n\tfont-weight:bold;\n\tmargin-left: auto;\n\tmargin-right: auto;\n}\n\n.group{\n\twidth: 50px;\n}",
 			"file": "css/nagiosdb.css",
+			"file_size": 1058,
+			"file_write_time": 131636783677112896,
 			"settings":
 			{
-				"buffer_size": 896,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "customchecks02.htm",
-			"settings":
-			{
-				"buffer_size": 4871,
+				"buffer_size": 987,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -329,17 +354,33 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "gits",
+		"height": 236.0,
+		"last_filter": "color sch",
 		"selected_items":
 		[
 			[
-				"gits",
-				"GitSavvy: help"
+				"color sch",
+				"UI: Select Color Scheme"
+			],
+			[
+				"colorhe",
+				"Color Helper: Index Colors in File"
+			],
+			[
+				"packagein",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
 			],
 			[
 				"packa",
 				"Package Control: Install Package"
+			],
+			[
+				"gits",
+				"GitSavvy: help"
 			],
 			[
 				"pa",
@@ -538,7 +579,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 444.0
+		"width": 428.0
 	},
 	"console":
 	{
@@ -572,12 +613,16 @@
 	],
 	"file_history":
 	[
+		"/C/inetpub/wwwroot/hpcd/logs/cae_adm_check_quotas.htm",
+		"/C/inetpub/wwwroot/hpcd/logs/cae_nas1_check_home15.htm",
+		"/J/WORKAREA/98_Dev/shell_script/nagios_scripts/cae-adm1/check_free_nodes",
+		"/C/inetpub/wwwroot/hpcd/customchecks02.htm",
+		"/C/inetpub/wwwroot/hpcd/logs/cae_adm_check_archivo.htm",
+		"/C/inetpub/wwwroot/hpcd/logs/mln2_check_osgd.htm",
 		"/J/WORKAREA/98_Dev/shell_script/nagios_scripts/cae-adm1/check_available_nodes.sh",
 		"/J/WORKAREA/98_Dev/shell_script/nagios_scripts/cae-nas1/check_home15.sh",
-		"/C/inetpub/wwwroot/hpcd/logs/cae_adm_check_archivo.htm",
 		"/C/inetpub/wwwroot/hpcd/css/nagiosdb.css",
 		"/C/inetpub/wwwroot/hpcd/js/nagiosdb.js",
-		"/C/inetpub/wwwroot/hpcd/customchecks02.htm",
 		"/C/inetpub/wwwroot/hpcd/dashboard.htm",
 		"/C/CAE/Sublime Text/Data/Packages/TortoiseSVN/TortoiseSVN.sublime-settings",
 		"/C/CAE/Sublime Text/Data/Packages/User/TortoiseSVN.sublime-settings",
@@ -695,15 +740,11 @@
 		"/F/TEMP/7zO8A3711B9/how to do.txt",
 		"/F/iso/Titanfall.2-CODEX/Titanfall2 ES Language Pack/CODEX.ini",
 		"/F/TEMP/7zOC38FA4B6/readme.txt",
-		"/J/Titanfall 2/r2/stats.txt",
-		"/J/Titanfall 2/gameversion.txt",
-		"/J/Titanfall 2/r2/GameInfo.txt",
-		"/J/Titanfall 2/CODEX.ini",
-		"/F/iso/codex-titanfall.2/Titanfall.2.Update.v2.0.7.0-CODEX/codex.nfo"
+		"/J/Titanfall 2/r2/stats.txt"
 	],
 	"find":
 	{
-		"height": 50.0
+		"height": 44.0
 	},
 	"find_in_files":
 	{
@@ -747,35 +788,73 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2398,
+						"buffer_size": 2201,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2061,
-								2061
+								1327,
+								1327
 							]
 						],
 						"settings":
 						{
+							"color_helper.box_height": 22,
+							"color_helper.color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"hex_compressed",
+									"rgba",
+									"hex",
+									"hsl",
+									"rgb",
+									"hsla",
+									"webcolors"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".htm",
+								"current_syntax": "HTML/HTML",
+								"enabled": true,
+								"last_updated": 1519205939.09,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
 							"git_savvy.repo_path": "C:\\inetpub\\wwwroot\\hpcd",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"translate_tabs_to_spaces": false,
 							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 852.0,
+						"translation.y": 198.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -784,80 +863,149 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12240,
+						"buffer_size": 14149,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9811,
-								9811
+								13292,
+								13292
 							]
 						],
 						"settings":
 						{
+							"color_helper.box_height": 22,
+							"color_helper.color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.popup_active": false,
+							"color_helper.popup_auto": false,
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".js",
+								"current_syntax": "JavaScript/JavaScript",
+								"enabled": false,
+								"last_updated": 1519205939.09
+							},
 							"git_savvy.repo_path": "C:\\inetpub\\wwwroot\\hpcd",
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5676.0,
+						"translation.y": 6871.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "logs/mln2_check_osgd.htm",
+					"file": "logs/cae_adm_check_quotas.htm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 339,
+						"buffer_size": 1258,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								162,
-								82
+								609,
+								609
 							]
 						],
 						"settings":
 						{
+							"color_helper.box_height": 22,
+							"color_helper.color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"hex_compressed",
+									"rgba",
+									"hex",
+									"hsl",
+									"rgb",
+									"hsla",
+									"webcolors"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".htm",
+								"current_syntax": "HTML/HTML",
+								"enabled": true,
+								"last_updated": 1519205939.09,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
 							"git_savvy.repo_path": "C:\\inetpub\\wwwroot\\hpcd",
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 8,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "logs/cae_adm_check_archivo.htm",
+					"file": "/C/CAE/Sublime Text/Data/Packages/ColorPicker/ColorPicker.sublime-settings",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 34,
+						"buffer_size": 240,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								24,
-								24
+								240,
+								240
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"color_helper.box_height": 22,
+							"color_helper.color_scheme": "Packages/Color Scheme - Legacy/Monokai Bright.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.scan":
+							{
+								"current_ext": ".sublime-settings",
+								"current_syntax": "JavaScript/JSON",
+								"enabled": false,
+								"last_updated": 1519205939.09
+							},
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -878,58 +1026,118 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 896,
+						"buffer_size": 987,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								365,
-								365
+								290,
+								290
 							]
 						],
 						"settings":
 						{
+							"color_helper.box_height": 22,
+							"color_helper.color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+							"color_helper.file_palette":
+							[
+								"#00000033@1",
+								"#00000099@1",
+								"#999999ff",
+								"#ffffff66@1"
+							],
+							"color_helper.no_auto": false,
+							"color_helper.popup_active": false,
+							"color_helper.popup_auto": true,
+							"color_helper.preview_meta":
+							{
+								"462":
+								[
+									-1684920093006618963,
+									18,
+									"rgba",
+									-6677075865504933008,
+									13,
+									"1519230507.954289"
+								],
+								"696":
+								[
+									2157664310914846117,
+									14,
+									"rgba",
+									-6677075865504933008,
+									14,
+									"1519230508.410289"
+								],
+								"726":
+								[
+									2157664310960944297,
+									14,
+									"rgba",
+									-6677075865504933008,
+									15,
+									"1519230508.413289"
+								],
+								"753":
+								[
+									8343254261313435109,
+									20,
+									"rgba",
+									-6677075865504933008,
+									16,
+									"1519230508.418289"
+								],
+								"869":
+								[
+									-5894424817916250374,
+									7,
+									"hex",
+									8922859972725641311,
+									17,
+									"1519230508.423289"
+								]
+							},
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"hex_compressed",
+									"rgba",
+									"hex",
+									"hsl",
+									"rgb",
+									"hsla",
+									"webcolors"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".css",
+								"current_syntax": "CSS/CSS",
+								"enabled": true,
+								"last_updated": 1519205939.09,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
 							"git_savvy.repo_path": "C:\\inetpub\\wwwroot\\hpcd",
 							"syntax": "Packages/CSS/CSS.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 924.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "customchecks02.htm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4871,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3559,
-								3629
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 8118.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -937,7 +1145,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 32.0
+		"height": 30.0
 	},
 	"input":
 	{
@@ -969,8 +1177,8 @@
 		"cols":
 		[
 			0.0,
-			0.4890625,
-			0.766249185709,
+			0.554210296684,
+			0.902172295001,
 			1.0
 		],
 		"rows":
@@ -1008,7 +1216,7 @@
 	"project": "hpcd.sublime-project",
 	"replace":
 	{
-		"height": 60.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1038,15 +1246,15 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
-	"side_bar_width": 147.0,
+	"side_bar_visible": true,
+	"side_bar_width": 392.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

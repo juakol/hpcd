@@ -193,7 +193,8 @@ try{
                     } 
                 }
             }
-            xhttp.open("GET", "http://cae-adm.eadscasa.casa.corp:8880/nagios/logs/cae_adm_check_quotas.htm", true);
+            //xhttp.open("GET", "http://cae-adm.eadscasa.casa.corp:8880/nagios/logs/cae_adm_check_quotas.htm", true);
+            xhttp.open("GET", "logs/cae_adm_check_quotas.htm", true);
             xhttp.send();  
         }
         catch(ex){console.log(ex.message);}
@@ -300,6 +301,29 @@ try{
                     case "queue-status":
                         $("#queue-status").text(String(_logData.match(/[0-9]+/))+" queued jobs");
                     break;
+
+                    case "quotas-status":
+                        var oQuotas = JSON.parse(_logData);
+                        debugger;
+                        var $grupoCell;
+                        var $statusCell;
+
+                        for(i=0;i<oQuotas.length;i++){
+                             $grupoCell = $("#"+oQuotas[i].grupo);
+                             $statusCell = $("#"+oQuotas[i].grupo+"-status");
+                             $statusCell.text(oQuotas[i].quedan);
+                             $statusCell.innerText = oQuotas[i].quedan
+                            if($statusCell.text() == "OK"){
+                                $grupoCell.css('background-color', _green);
+                                $statusCell.css('background-color', _green);
+                            }
+                            else{
+                                $grupoCell.css('background-color', _yellow);
+                                $statusCell.css('background-color', _yellow);
+                            }
+                        }
+                    break;
+
                 }
             }
         }
@@ -314,8 +338,8 @@ try{
                     setValue(_oWidget, this.responseText);
                 }
             }
-            xhttp.open("GET", "http://cae-adm.eadscasa.casa.corp:8880/nagios/logs/"+_logName, true);
-            //xhttp.open("GET", "logs/"+ _logName, true);
+            //xhttp.open("GET", "http://cae-adm.eadscasa.casa.corp:8880/nagios/logs/"+_logName, true);
+            xhttp.open("GET", "logs/"+ _logName, true);
             xhttp.send();
         }
         catch(ex){console.log(ex.message);}
