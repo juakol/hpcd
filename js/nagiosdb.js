@@ -187,6 +187,9 @@ try{
                             oCellQuedan.className = "quedan-cell";
                             oCellQuedan.innerText = oQuotas[i].quedan;
                             oCellQuedan.id = oQuotas[i].grupo+"-status";
+                            if (i==oQuotas.length-1 && k<(iGroupsPerRow*2)-1){
+                                oCellQuedan.style.borderRight = "3px solid black";
+                            }
                             i++;
                         }
                         j++;
@@ -304,7 +307,6 @@ try{
 
                     case "quotas-status":
                         var oQuotas = JSON.parse(_logData);
-                        debugger;
                         var $grupoCell;
                         var $statusCell;
 
@@ -323,7 +325,6 @@ try{
                             }
                         }
                     break;
-
                 }
             }
         }
