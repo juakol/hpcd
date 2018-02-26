@@ -157,7 +157,6 @@ try{
             $("a[title='JavaScript charts']").hide();
 
             initializeQuotasTable();
-
             updateGm();
         }
         catch(ex){console.log(ex.message);}
