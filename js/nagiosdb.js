@@ -10,11 +10,12 @@ try{
     var oHome15PerformanceData = [];
 
     //Some basic colors
-    var _green = "#a9d70b";
-    var _yellow ="#f9c802";
-    var _red = "#FF0E41";
+    var _green = "#28a745"; // Bootstrap success
+    var _yellow ="#ffc107"; // Bootstrap warning
+    var _red = "#dc3545";   // Bootstrap danger
 
     var UPDATE_INTERVAL_MS = 60000;
+    var SIMULATE_RANDOM = true; // set to true to simulate random values for home15
 
     //Default options for gauge meters
     var dfltOpts = {
@@ -84,8 +85,8 @@ try{
                 "dataDateFormat": "HH:NN",
                 "plotAreaFillAlphas": 0.23,
                 "colors": [
-                    "#88E537",
-                    "#70A5BF"
+                    "#0d6efd",   // primary
+                    "#fd7e14"    // orange
                 ],
                 "precision": 2,
                 "categoryAxis": {
@@ -156,7 +157,6 @@ try{
                 "dataProvider": initializeChartData()
             });
             oCaeNas1Home15PerformanceChart.validateData();
-            $("a[title='JavaScript charts']").hide();
 
             initializeQuotasTable();
             updateGm();
@@ -270,12 +270,12 @@ try{
                         _logData=String(_logData.match(/OK|CRITICAL/i));
                         switch(_logData){
                             case "OK":
-                                $("#archivo-status").css('background-color', _green);
+                                $("#archivo-status").css({'background-color': _green, 'color':'#fff'});
                                 $("#archivo-status").text("OK");
                             break;
 
                             case "CRITICAL":
-                                $("#archivo-status").css('background-color', _red);
+                                $("#archivo-status").css({'background-color': _red, 'color':'#fff'});
                                 $("#archivo-status").text("ERROR");
                             break;
                         }
@@ -286,12 +286,12 @@ try{
                         for (var i=1;i<=perfData.length;i++){
                             switch(perfData[i-1]){
                                 case "Accepting":
-                                    $("#tarantella-status-"+i).css('background-color', _green);
+                                    $("#tarantella-status-"+i).css({'background-color': _green, 'color':'#fff'});
                                     $("#tarantella-status-"+i).text('mln'+i+' OK');                                        
                                 break;
 
                                 case "NOT":
-                                    $("#tarantella-status-"+i).css('background-color', _red);
+                                    $("#tarantella-status-"+i).css({'background-color': _red, 'color':'#fff'});
                                     $("#tarantella-status-"+i).text('mln'+i+' ERROR');                                        
                                 break;
                             }
@@ -310,12 +310,12 @@ try{
                              var quedanText = oQuotas[i].quedan;
                              $statusCell.text(quedanText);
                             if(quedanText === "OK"){
-                                $grupoCell.css('background-color', _green);
-                                $statusCell.css('background-color', _green);
+                                $grupoCell.css({'background-color': _green, 'color':'#fff'});
+                                $statusCell.css({'background-color': _green, 'color':'#fff'});
                             }
                             else{
-                                $grupoCell.css('background-color', _yellow);
-                                $statusCell.css('background-color', _yellow);
+                                $grupoCell.css({'background-color': _yellow, 'color':'#111827'});
+                                $statusCell.css({'background-color': _yellow, 'color':'#111827'});
                             }
                         }
                     break;
@@ -341,12 +341,22 @@ try{
     function updateGm(){
         try{
             if (document.hidden) { return; }
-            // Fetch shared home15 log once
-            fetchText("logs/cae_nas1_check_home15.htm", function(resp){
-                setValue("oCaeNas1Home15PerformanceChart", resp);
-                setValue("oCaeNas1Home15UsageGm", resp);
-                setValue("oCaeNas1Home15AwaitingTimeGm", resp);
-            });
+
+            if (SIMULATE_RANDOM) {
+                var usage = (Math.random() * 100).toFixed(2);
+                var awaiting = (Math.random() * 10).toFixed(2);
+                var simulated = "awaiting " + awaiting + " usage " + usage;
+                setValue("oCaeNas1Home15PerformanceChart", simulated);
+                setValue("oCaeNas1Home15UsageGm", simulated);
+                setValue("oCaeNas1Home15AwaitingTimeGm", simulated);
+            } else {
+                // Fetch shared home15 log once
+                fetchText("logs/cae_nas1_check_home15.htm", function(resp){
+                    setValue("oCaeNas1Home15PerformanceChart", resp);
+                    setValue("oCaeNas1Home15UsageGm", resp);
+                    setValue("oCaeNas1Home15AwaitingTimeGm", resp);
+                });
+            }
             // Independent lightweight requests
             fetchText("logs/cae_adm_check_archivo.htm", function(resp){ setValue("archivo-status", resp); });
             fetchText("logs/mln2_check_osgd.htm", function(resp){ setValue("tarantella-status", resp); });
