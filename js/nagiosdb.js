@@ -14,8 +14,8 @@ try{
     var _yellow ="#ffc107"; // Bootstrap warning
     var _red = "#dc3545";   // Bootstrap danger
 
-    var UPDATE_INTERVAL_MS = 60000;
-    var SIMULATE_RANDOM = true; // set to true to simulate random values for home15
+    var UPDATE_INTERVAL_MS = 10000; // 10s per request
+    var SIMULATE_RANDOM = true; // set to true to simulate random values for home15 and other widgets
 
     //Default options for gauge meters
     var dfltOpts = {
@@ -343,12 +343,38 @@ try{
             if (document.hidden) { return; }
 
             if (SIMULATE_RANDOM) {
+                // home15 (usage/awaiting + chart)
                 var usage = (Math.random() * 100).toFixed(2);
                 var awaiting = (Math.random() * 10).toFixed(2);
                 var simulated = "awaiting " + awaiting + " usage " + usage;
                 setValue("oCaeNas1Home15PerformanceChart", simulated);
                 setValue("oCaeNas1Home15UsageGm", simulated);
                 setValue("oCaeNas1Home15AwaitingTimeGm", simulated);
+
+                // Archivo status
+                var archivoOk = Math.random() < 0.7; // 70% OK
+                setValue("archivo-status", archivoOk ? "OK" : "CRITICAL");
+
+                // Tarantella 4 nodes
+                var tokens = [];
+                for (var ti=0; ti<4; ti++){ tokens.push(Math.random()<0.8 ? "Accepting" : "NOT"); }
+                setValue("tarantella-status", tokens.join(" "));
+
+                // Queue size
+                var q = Math.floor(Math.random()*200);
+                setValue("queue-status", String(q));
+
+                // Quotas: use existing groups in table if present
+                var grupos = document.querySelectorAll('#quotas-table .grupo-cell');
+                if (grupos && grupos.length){
+                    var quotas = [];
+                    for (var gi=0; gi<grupos.length; gi++){
+                        var gId = grupos[gi].id || grupos[gi].textContent || ("G"+(gi+1));
+                        var ok = Math.random() < 0.5;
+                        quotas.push({ grupo: gId, quedan: ok ? "OK" : String(Math.floor(Math.random()*50)) });
+                    }
+                    setValue("quotas-status", JSON.stringify(quotas));
+                }
             } else {
                 // Fetch shared home15 log once
                 fetchText("logs/cae_nas1_check_home15.htm", function(resp){
@@ -356,12 +382,12 @@ try{
                     setValue("oCaeNas1Home15UsageGm", resp);
                     setValue("oCaeNas1Home15AwaitingTimeGm", resp);
                 });
+                // Independent lightweight requests
+                fetchText("logs/cae_adm_check_archivo.htm", function(resp){ setValue("archivo-status", resp); });
+                fetchText("logs/mln2_check_osgd.htm", function(resp){ setValue("tarantella-status", resp); });
+                fetchText("logs/cae_adm1_check_queued_jobs.htm", function(resp){ setValue("queue-status", resp); });
+                fetchText("logs/cae_adm_check_quotas.htm", function(resp){ setValue("quotas-status", resp); });
             }
-            // Independent lightweight requests
-            fetchText("logs/cae_adm_check_archivo.htm", function(resp){ setValue("archivo-status", resp); });
-            fetchText("logs/mln2_check_osgd.htm", function(resp){ setValue("tarantella-status", resp); });
-            fetchText("logs/cae_adm1_check_queued_jobs.htm", function(resp){ setValue("queue-status", resp); });
-            fetchText("logs/cae_adm_check_quotas.htm", function(resp){ setValue("quotas-status", resp); });
         }
         catch(ex){console.log(ex.message);}    
     }
