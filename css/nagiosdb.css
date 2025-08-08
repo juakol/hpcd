@@ -1,87 +1,65 @@
-/*Generic*/
-table{
-	text-align: center;
-	vertical-align:middle;
-
+/* Reset and base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  background: #f6f7fb;
+  color: #1f2937;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.4;
 }
 
+/* Wrapper uses responsive grid */
 #wrapper{
-	width: 1235px;
-	/*height: 200px;*/
-	margin-left: auto;
-	margin-right: auto;
+  width: min(1200px, 96vw);
+  margin: 24px auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(120px, auto);
+  gap: 16px;
 }
 
-.table{
-	padding: 20px;
-	border-collapse: collapse;
-	width: 100%;
-	height: 100%;
-}
-
+/* Frames (cards) */
 .frame{
-	/*margin-bottom: 300px;*/
-	box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
-	border-radius: 13px;
-	margin-top:20px
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 16px;
+  transition: box-shadow 180ms ease, transform 180ms ease;
 }
+.frame:hover{ box-shadow: 0 14px 32px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.08); }
 
-.hidden{
-	visibility: hidden;
-}
+/* Layout placement */
+#services-div{ grid-column: span 4; }
+#gauges-frame{ grid-column: span 8; }
+#home15-performance-chart{ grid-column: span 12; height: 360px; }
+#quotas-div{ grid-column: span 12; }
 
-.label{
-	text-align: center;
-	font: 35px EADS sans;
-	font-weight:bold;
-	color: rgba(0,0,0,.6);
-	text-shadow: rgba(0,0,0,.2) 2px 6px 5px,rgba(255,255,255,.4) 0 -4px 30px;
-	padding-top: 15px;
-}
+/* Tables */
+table{ width: 100%; border-collapse: collapse; text-align: center; }
+#services-table th, #services-table td{ border: 1px solid #e5e7eb; padding: 10px 8px; }
+#services-table thead th{ background: #f3f4f6; font-weight: 600; color: #111827; }
 
-.top-label{
-	padding-left: 30px;
-	padding-top:10px;
-	color:#999999;
-	font: 45px EADS sans;
-	font-weight:bold;
-	margin-left: auto;
-	margin-right: auto;
-}
+/* Quotas table */
+#quotas-table th, #quotas-table tr { border: 1px solid #e5e7eb; }
+#quotas-table td{ padding: 8px 10px; }
+#quotas-table thead th{ background: #f3f4f6; font-weight: 700; letter-spacing: .02em; }
+#quotas-table td:nth-of-type(2n) { border-right: 3px solid #d1d5db; }
+#quotas-table td:last-child { border-right: none; }
 
-/*Services*/
-#services-div{
-	height: 236px;
-	width: 363px
-}
+/* Gauges */
+.gauge-meter{ width: 100%; max-width: 420px; height: 260px; }
 
-#services-table th, #services-table tr, #services-table td{
-	border: 1px solid;
-}
+/* Utility */
+.hidden{ visibility: hidden; }
+.label{ text-align: center; font-size: 32px; font-weight: 700; color: rgba(0,0,0,.7); }
+.top-label{ padding-left: 30px; padding-top:10px; color:#6b7280; font-size: 40px; font-weight:700; margin-left: auto; margin-right: auto; }
 
-/*home15 gauge meters*/
-.gauge-meter{
-	width: 400px;
-	height: 270px;
-	top:-50px;
-}
-
-/*home15 performance chart*/
-
-#home15-performance-chart {
-	float:right; width: 100%;
-	height: 350px;
-}
-
-/*Quotas table*/
-#quotas-table th, #quotas-table tr {
-	border: 1px solid;
-}
-
-#quotas-table td:nth-of-type(2n) {
-    border-right: 3px solid;
-}
-
-#quotas-table td:last-child {
-    border-right: none;
+/* Dark mode */
+@media (prefers-color-scheme: dark){
+  body{ background:#0b1220; color:#e5e7eb; }
+  .frame{ background:#0e1525; box-shadow: 0 10px 25px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.6); }
+  #services-table thead th, #quotas-table thead th{ background:#111a2e; color:#e5e7eb; }
+  #services-table th, #services-table td, #quotas-table th, #quotas-table tr{ border-color: #1f2a44; }
+  #quotas-table td:nth-of-type(2n){ border-right: 3px solid #1f2a44; }
 }
