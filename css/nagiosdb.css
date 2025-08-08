@@ -1,13 +1,9 @@
 /* Reset and base */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
-body{
-  margin: 0;
-  background: #ffffff;
-  color: #111827;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  line-height: 1.4;
-}
+
+/***** Base overrides *****/
+body{ background:#f8fafc; color:#111827; }
 
 /* Wrapper uses responsive grid */
 #wrapper{
@@ -19,14 +15,8 @@ body{
   gap: 16px;
 }
 
-/* Frames (cards) */
-.frame{
-  background: #ffffff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  border-radius: 14px;
-  padding: 16px;
-  transition: box-shadow 180ms ease, transform 180ms ease;
-}
+/***** Cards and layout *****/
+.frame{ background: transparent; box-shadow: none; padding: 0; }
 .frame:hover{ box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
 
 /* Layout placement */
@@ -35,22 +25,22 @@ body{
 #home15-performance-chart{ grid-column: span 12; height: 360px; }
 #quotas-div{ grid-column: span 12; }
 
-/* Tables */
+/***** Tables *****/
 table{ width: 100%; border-collapse: collapse; text-align: center; }
-#services-table th, #services-table td{ border: 1px solid #e5e7eb; padding: 10px 8px; color:#111827; }
+#services-table th, #services-table td { color:#111827; }
 #services-table thead th{ background: #f9fafb; font-weight: 600; color: #111827; }
 
 /* Quotas table */
 #quotas-table th, #quotas-table tr { border: 1px solid #e5e7eb; }
-#quotas-table td{ padding: 8px 10px; color:#111827; }
+#quotas-table td { color:#111827; }
 #quotas-table thead th{ background: #f9fafb; font-weight: 700; letter-spacing: .02em; color:#111827; }
 #quotas-table td:nth-of-type(2n) { border-right: 3px solid #d1d5db; }
 #quotas-table td:last-child { border-right: none; }
 
 /* Status/number cells */
-.status-cell, .number-cell{ color:#111827; font-weight: 600; }
+.status-cell, .number-cell{ color:#111827; font-weight:600; }
 
-/* Gauges */
+/***** Gauges *****/
 .gauge-meter{ width: 100%; max-width: 420px; height: 260px; }
 
 /* Utility */
