@@ -10,9 +10,9 @@ try{
     var oHome15PerformanceData = [];
 
     //Some basic colors
-    var _green = "#28a745"; // Bootstrap success
-    var _yellow ="#ffc107"; // Bootstrap warning
-    var _red = "#dc3545";   // Bootstrap danger
+    var _green = "#16a34a"; // success
+    var _yellow ="#f59e0b"; // warning
+    var _red = "#dc2626";   // danger
 
     var UPDATE_INTERVAL_MS = 300000; // 5 min per request
     var SIMULATE_RANDOM = true; // set to true to simulate random values for home15 and other widgets
@@ -31,7 +31,14 @@ try{
             stroke_width: 3,
             stroke_linecap: 'round'
         },
-        gaugeWidthScale: 0.8,
+        gaugeWidthScale: 0.55,
+        gaugeColor: '#e2e8f0',
+        shadowOpacity: 0,
+        titleFontColor: '#475569',
+        titleFontFamily: 'Inter, system-ui, sans-serif',
+        valueFontColor: '#0f172a',
+        valueFontFamily: 'Inter, system-ui, sans-serif',
+        labelFontColor: '#94a3b8',
         counter: false
     }
 
@@ -83,33 +90,47 @@ try{
                 "columnSpacing": 4,
                 "autoDisplay": true,
                 "dataDateFormat": "HH:NN",
-                "plotAreaFillAlphas": 0.23,
+                "fontFamily": "Inter, system-ui, sans-serif",
+                "fontSize": 12,
+                "color": "#475569",
+                "plotAreaFillAlphas": 0,
                 "colors": [
-                    "#0d6efd",   // primary
-                    "#fd7e14"    // orange
+                    "#2563eb",   // blue
+                    "#f97316"    // orange
                 ],
                 "precision": 2,
                 "categoryAxis": {
                     "minPeriod": "mm",
                     "parseDates": true,
-                    "boldLabels": true,
+                    "gridAlpha": 0.06,
+                    "axisAlpha": 0.15,
                 },
                 "graphs": [
                     {
+                        "type": "smoothedLine",
                         "bullet": "round",
-                        "bulletSize": 6,
+                        "bulletSize": 7,
+                        "bulletBorderAlpha": 1,
+                        "bulletBorderColor": "#ffffff",
+                        "bulletBorderThickness": 2,
+                        "fillAlphas": 0.08,
                         "id": "usage-graph",
-                        "lineThickness": 2,
+                        "lineThickness": 2.5,
                         "title": "Usage",
                         "valueAxis": "usage-axis",
                         "valueField": "usage",
                         "yAxis": "usage-axis"
                     },
                     {
+                        "type": "smoothedLine",
                         "bullet": "round",
-                        "bulletSize": 6,
+                        "bulletSize": 7,
+                        "bulletBorderAlpha": 1,
+                        "bulletBorderColor": "#ffffff",
+                        "bulletBorderThickness": 2,
+                        "fillAlphas": 0.08,
                         "id": "awaiting-time-graph",
-                        "lineThickness": 2,
+                        "lineThickness": 2.5,
                         "title": "Awaiting time",
                         "valueAxis": "awaiting-time-axis",
                         "valueField": "awaiting-time",
@@ -125,6 +146,8 @@ try{
                         "title": "Usage",
                         "titleFontSize": 13,
                         "strictMinMax": true,
+                        "gridAlpha": 0.06,
+                        "axisAlpha": 0,
                         "integersOnly": true,
                         "unit":"%",
                         "labelFrequency": 2,
@@ -134,6 +157,8 @@ try{
                         "id": "awaiting-time-axis",
                         "position": "right",
                         "title": "Awaiting time (ms)",
+                        "gridAlpha": 0,
+                        "axisAlpha": 0,
                         //"maximum": 300,
                         "titleFontSize": 13,
                     }
@@ -144,15 +169,11 @@ try{
                 "legend": {
                     "enabled": true,
                     "useGraphSettings": true,
-                    "switchable": false
+                    "switchable": false,
+                    "align": "center",
+                    "markerSize": 12
                 },
-                "titles": [
-                    {
-                        "id": "hom15-performance",
-                        "size": 15,
-                        "text": "home15 performance"
-                    }
-                ],
+                "titles": [],
                 "initialized": false,
                 "dataProvider": initializeChartData()
             });
@@ -208,7 +229,8 @@ try{
     function initializeChartData(){
         try{
             var oHome15PerformanceData = [];
-            var oDate = moment();
+            // Start one interval back: the first real value is added right away with the current time
+            var oDate = moment().subtract(5,"minutes");
             oHome15PerformanceData.unshift({
                 "usage": "",
                 "awaiting-time": "",
