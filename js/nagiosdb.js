@@ -363,6 +363,7 @@ try{
     function updateGm(){
         try{
             if (document.hidden) { return; }
+            _lastUpdate = Date.now();
 
             if (SIMULATE_RANDOM) {
                 // home15 (usage/awaiting + chart)
@@ -374,16 +375,16 @@ try{
                 setValue("oCaeNas1Home15AwaitingTimeGm", simulated);
 
                 // Archivo status
-                var archivoOk = Math.random() < 0.7; // 70% OK
+                var archivoOk = Math.random() < 0.8; // 80% OK (as in scripts/randomize_logs.py)
                 setValue("archivo-status", archivoOk ? "OK" : "CRITICAL");
 
                 // Tarantella 4 nodes
                 var tokens = [];
-                for (var ti=0; ti<4; ti++){ tokens.push(Math.random()<0.8 ? "Accepting" : "NOT"); }
+                for (var ti=0; ti<4; ti++){ tokens.push(Math.random()<0.85 ? "Accepting" : "NOT"); } // 85% accepting
                 setValue("tarantella-status", tokens.join(" "));
 
                 // Queue size
-                var q = Math.floor(Math.random()*200);
+                var q = Math.floor(Math.random()*251); // 0-250 jobs
                 setValue("queue-status", String(q));
 
                 // Quotas: use existing groups in table if present
@@ -392,8 +393,8 @@ try{
                     var quotas = [];
                     for (var gi=0; gi<grupos.length; gi++){
                         var gId = grupos[gi].id || grupos[gi].textContent || ("G"+(gi+1));
-                        var ok = Math.random() < 0.5;
-                        quotas.push({ grupo: gId, quedan: ok ? "OK" : String(Math.floor(Math.random()*50)) });
+                        var ok = Math.random() < 0.6; // 60% OK, otherwise 1-7 days left
+                        quotas.push({ grupo: gId, quedan: ok ? "OK" : (Math.floor(Math.random()*7)+1) + "days" });
                     }
                     setValue("quotas-status", JSON.stringify(quotas));
                 }
@@ -415,5 +416,10 @@ try{
     }
 
     setInterval(function(){ updateGm(); }, UPDATE_INTERVAL_MS);
+    // If the page was hidden when an update was due, refresh as soon as it becomes visible
+    var _lastUpdate = 0;
+    document.addEventListener("visibilitychange", function(){
+        if (!document.hidden && Date.now() - _lastUpdate > 2000) { updateGm(); }
+    });
 }
 catch(ex){console.log(ex.message);}

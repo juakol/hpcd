@@ -145,7 +145,8 @@ table{ width: 100%; text-align: center; }
 }
 #quotas-table thead tr:first-child{ display: none; }
 #quotas-table td{
-  color: #fff;
+  color: var(--ink);
+  background: #f1f5f9;
   font-weight: 600;
   font-size: .9rem;
   padding: .4rem .5rem;
