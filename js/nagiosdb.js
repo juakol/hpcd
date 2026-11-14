@@ -14,7 +14,7 @@ try{
     var _yellow ="#ffc107"; // Bootstrap warning
     var _red = "#dc3545";   // Bootstrap danger
 
-    var UPDATE_INTERVAL_MS = 10000; // 10s per request
+    var UPDATE_INTERVAL_MS = 300000; // 5 min per request
     var SIMULATE_RANDOM = true; // set to true to simulate random values for home15 and other widgets
 
     //Default options for gauge meters
@@ -215,7 +215,7 @@ try{
                 "date": oDate.format("HH:mm")
             });
             for (var i=0;i<10;i++){
-                oDate.subtract(1,"minute");
+                oDate.subtract(5,"minutes");
                 oHome15PerformanceData.unshift({
                     "usage": "",
                     "awaiting-time": "",
