@@ -216,7 +216,9 @@ try{
                             }
                         }
                         rowIndex++;
-                    } 
+                    }
+                    // Color the tiles right away instead of waiting for the next update
+                    setValue("quotas-status", this.responseText);
                 }
             }
             //xhttp.open("GET", "http://cae-adm.eadscasa.casa.corp:8880/nagios/logs/cae_adm_check_quotas.htm", true);
