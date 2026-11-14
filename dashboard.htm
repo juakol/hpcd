@@ -1,112 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-bs-theme="dark">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>HPC monitoring interface</title>
+		<script>
+			// Apply the saved theme before the page paints (dark by default)
+			(function(){
+				var t = "dark";
+				try { t = localStorage.getItem("hpcd-theme") || "dark"; } catch(e) {}
+				document.documentElement.setAttribute("data-theme", t);
+				document.documentElement.setAttribute("data-bs-theme", t);
+			})();
+		</script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/nagiosdb.css">
-    	<script src="lib/jquery-3.2.1.js" type="text/javascript" defer></script>
-    	<script src="lib/moment-2.20.0.js" type="text/javascript" defer></script>
+		<script src="lib/jquery-3.2.1.js" type="text/javascript" defer></script>
+		<script src="lib/moment-2.20.0.js" type="text/javascript" defer></script>
 		<script src="lib/amcharts.js" type="text/javascript" defer></script>
 		<script src="lib/serial.js" type="text/javascript" defer></script>
-	    <script src="lib/raphael-2.1.4.min.js" type="text/javascript" defer></script>
-	    <script src="lib/justgage-1.1.2.js" type="text/javascript" defer></script>
-	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-	    <script src="js/nagiosdb.js" type="text/javascript" defer></script>
+		<script src="lib/raphael-2.1.4.min.js" type="text/javascript" defer></script>
+		<script src="lib/justgage-1.1.2.js" type="text/javascript" defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+		<script src="js/nagiosdb.js" type="text/javascript" defer></script>
 	</head>
-	<body class="bg-light" style="font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">
-		<nav class="navbar navbar-light bg-white border-bottom sticky-top mb-3">
-			<div class="container-fluid">
-				<span class="navbar-brand mb-0 h1">HPC monitoring interface</span>
-				<span class="live-indicator">Live</span>
+	<body>
+		<header class="topbar">
+			<div class="topbar-inner">
+				<div class="brand">
+					<span class="brand-logo"></span>
+					<div>
+						<div class="brand-title">HPC monitoring interface</div>
+						<div class="brand-sub">Cluster services · home15 storage</div>
+					</div>
+				</div>
+				<div class="topbar-actions">
+					<span class="live-indicator">Live</span>
+					<button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch light/dark mode" title="Switch light/dark mode">
+						<span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+					</button>
+				</div>
 			</div>
-		</nav>
-		<div class="container-fluid">
-			<div class="row g-3">
-				<div class="col-12 col-lg-4">
-					<div class="card h-100" id="services-div">
-						<div class="card-header fw-semibold">Services</div>
-						<div class="card-body p-0">
-							<table class="table table-sm mb-0 align-middle" id="services-table">
-								<thead class="table-light">
-									<tr>
-										<th>Service</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Archivo</td>
-										<td class="status-cell" id="archivo-status"></td>
-									</tr>
-									<tr>
-										<td rowspan="4">Tarantella</td>
-										<td class="status-cell" id="tarantella-status-1"></td>
-									</tr>
-									<tr>
-										<td class="status-cell" id="tarantella-status-2"></td>
-									</tr>
-									<tr>
-										<td class="status-cell" id="tarantella-status-3"></td>
-									</tr>
-									<tr>
-										<td class="status-cell" id="tarantella-status-4"></td>
-									</tr>
-									<tr>
-										<td>Jobs queue</td>
-										<td class="number-cell" id="queue-status"></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+		</header>
+
+		<main class="page">
+			<!-- Summary tiles -->
+			<section class="kpi-grid" id="services-div">
+				<div class="kpi">
+					<div class="kpi-label">Archivo</div>
+					<div class="kpi-body">
+						<span class="pill status-cell" id="archivo-status">…</span>
 					</div>
 				</div>
-
-				<div class="col-12 col-lg-8">
-					<div class="card h-100" id="gauges-frame">
-						<div class="card-header fw-semibold">home15 overview</div>
-						<div class="card-body">
-							<div class="row g-3">
-								<div class="col-12 col-md-6 d-flex justify-content-center">
-									<div class="gauge-meter" id="cae-nas1-check-home15-usage-gm"></div>
-								</div>
-								<div class="col-12 col-md-6 d-flex justify-content-center">
-									<div class="gauge-meter" id="cae-nas1-check-home15-awaiting-time-gm"></div>
-								</div>
-							</div>
-						</div>
+				<div class="kpi">
+					<div class="kpi-label">Tarantella nodes</div>
+					<div class="kpi-body node-grid">
+						<span class="pill status-cell" id="tarantella-status-1">mln1</span>
+						<span class="pill status-cell" id="tarantella-status-2">mln2</span>
+						<span class="pill status-cell" id="tarantella-status-3">mln3</span>
+						<span class="pill status-cell" id="tarantella-status-4">mln4</span>
 					</div>
 				</div>
-
-				<div class="col-12">
-					<div class="card">
-						<div class="card-header fw-semibold">home15 performance</div>
-						<div class="card-body">
-							<div class="frame chart" id="home15-performance-chart"></div>
-						</div>
+				<div class="kpi">
+					<div class="kpi-label">Jobs queue</div>
+					<div class="kpi-body">
+						<span class="kpi-value number-cell" id="queue-status">–</span>
 					</div>
 				</div>
-
-				<div class="col-12">
-					<div class="card" id="quotas-div">
-						<div class="card-header fw-semibold">Soft Quotas</div>
-						<div class="card-body p-0">
-							<table class="table table-sm mb-0" id="quotas-table">
-								<thead class="table-light">
-									<tr>
-										<th colspan="16">SOFT QUOTAS</th>
-									</tr>
-								</thead>
-								<tbody></tbody>
-							</table>
-						</div>
+				<div class="kpi">
+					<div class="kpi-label">Quotas with warnings</div>
+					<div class="kpi-body">
+						<span class="kpi-value" id="quotas-summary">–</span>
 					</div>
 				</div>
+			</section>
 
-			</div>
-		</div>
+			<!-- home15: chart + gauges -->
+			<section class="main-grid">
+				<div class="panel panel-chart">
+					<div class="panel-header">
+						<span>home15 performance</span>
+						<span class="panel-hint">one point every 5 minutes</span>
+					</div>
+					<div class="panel-body">
+						<div class="chart" id="home15-performance-chart"></div>
+					</div>
+				</div>
+				<div class="panel panel-gauges" id="gauges-frame">
+					<div class="panel-header"><span>home15 now</span></div>
+					<div class="panel-body gauges-stack">
+						<div class="gauge-meter" id="cae-nas1-check-home15-usage-gm"></div>
+						<div class="gauge-meter" id="cae-nas1-check-home15-awaiting-time-gm"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Quotas -->
+			<section class="panel" id="quotas-div">
+				<div class="panel-header">
+					<span>Soft quotas</span>
+					<span class="legend-dots">
+						<span class="dot dot-ok"></span>OK
+						<span class="dot dot-warn"></span>days left
+					</span>
+				</div>
+				<div class="panel-body quotas-scroll">
+					<table class="quotas-table" id="quotas-table">
+						<thead>
+							<tr>
+								<th colspan="16">SOFT QUOTAS</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</section>
+		</main>
 	</body>
 </html>

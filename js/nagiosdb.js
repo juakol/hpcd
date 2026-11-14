@@ -17,6 +17,19 @@ try{
     var UPDATE_INTERVAL_MS = 300000; // 5 min per request
     var SIMULATE_RANDOM = true; // set to true to simulate random values for home15 and other widgets
 
+    // Colors used by the gauges and the chart for each theme
+    function themeColors(){
+        var dark = document.documentElement.getAttribute("data-theme") !== "light";
+        return dark ? {
+            text: "#a3b1c9", strong: "#e5ecf6", faint: "#64748b",
+            track: "#1f2a44", grid: "#ffffff", gridAlpha: 0.06, surface: "#121a2e"
+        } : {
+            text: "#475569", strong: "#0f172a", faint: "#94a3b8",
+            track: "#e2e8f0", grid: "#0f172a", gridAlpha: 0.06, surface: "#ffffff"
+        };
+    }
+    var _theme = themeColors();
+
     //Default options for gauge meters
     var dfltOpts = {
         min: 0,
@@ -27,18 +40,18 @@ try{
             bottomlength: 10,
             bottomwidth: 12,
             color: '#8e8e93',
-            stroke: '#ffffff',
+            stroke: _theme.surface,
             stroke_width: 3,
             stroke_linecap: 'round'
         },
         gaugeWidthScale: 0.55,
-        gaugeColor: '#e2e8f0',
+        gaugeColor: _theme.track,
         shadowOpacity: 0,
-        titleFontColor: '#475569',
+        titleFontColor: _theme.text,
         titleFontFamily: 'Inter, system-ui, sans-serif',
-        valueFontColor: '#0f172a',
+        valueFontColor: _theme.strong,
         valueFontFamily: 'Inter, system-ui, sans-serif',
-        labelFontColor: '#94a3b8',
+        labelFontColor: _theme.faint,
         counter: false
     }
 
@@ -92,7 +105,7 @@ try{
                 "dataDateFormat": "HH:NN",
                 "fontFamily": "Inter, system-ui, sans-serif",
                 "fontSize": 12,
-                "color": "#475569",
+                "color": _theme.text,
                 "plotAreaFillAlphas": 0,
                 "colors": [
                     "#2563eb",   // blue
@@ -111,7 +124,7 @@ try{
                         "bullet": "round",
                         "bulletSize": 7,
                         "bulletBorderAlpha": 1,
-                        "bulletBorderColor": "#ffffff",
+                        "bulletBorderColor": _theme.surface,
                         "bulletBorderThickness": 2,
                         "fillAlphas": 0.08,
                         "id": "usage-graph",
@@ -126,7 +139,7 @@ try{
                         "bullet": "round",
                         "bulletSize": 7,
                         "bulletBorderAlpha": 1,
-                        "bulletBorderColor": "#ffffff",
+                        "bulletBorderColor": _theme.surface,
                         "bulletBorderThickness": 2,
                         "fillAlphas": 0.08,
                         "id": "awaiting-time-graph",
@@ -179,11 +192,48 @@ try{
             });
             oCaeNas1Home15PerformanceChart.validateData();
 
+            applyThemeToWidgets();
+            $("#theme-toggle").on("click", function(){
+                var next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+                document.documentElement.setAttribute("data-theme", next);
+                document.documentElement.setAttribute("data-bs-theme", next);
+                try { localStorage.setItem("hpcd-theme", next); } catch(e) {}
+                applyThemeToWidgets();
+            });
+
             initializeQuotasTable();
             updateGm();
         }
         catch(ex){console.log(ex.message);}    
     });
+
+    // Recolor the gauges and the chart for the current theme
+    function applyThemeToWidgets(){
+        try{
+            var c = themeColors();
+            [oCaeNas1Home15UsageGm, oCaeNas1Home15AwaitingTimeGm].forEach(function(g){
+                if (!g) { return; }
+                g.gauge.attr({ fill: c.track });
+                g.txtTitle.attr({ fill: c.text });
+                g.txtValue.attr({ fill: c.strong });
+                g.txtMin.attr({ fill: c.faint });
+                g.txtMax.attr({ fill: c.faint });
+                if (g.needle) { g.needle.attr({ stroke: c.surface }); }
+            });
+            var ch = oCaeNas1Home15PerformanceChart;
+            if (ch) {
+                ch.color = c.text;
+                ch.categoryAxis.color = c.text;
+                ch.categoryAxis.gridColor = c.grid;
+                ch.categoryAxis.axisColor = c.grid;
+                ch.valueAxes.forEach(function(a){ a.color = c.text; a.gridColor = c.grid; a.axisColor = c.grid; });
+                ch.graphs.forEach(function(gr){ gr.bulletBorderColor = c.surface; });
+                if (ch.legend) { ch.legend.color = c.text; }
+                ch.validateNow();
+            }
+        }
+        catch(ex){console.log(ex.message);}
+    }
 
     function initializeQuotasTable(){
         try{
@@ -234,15 +284,11 @@ try{
             // Start one interval back: the first real value is added right away with the current time
             var oDate = moment().subtract(5,"minutes");
             oHome15PerformanceData.unshift({
-                "usage": "",
-                "awaiting-time": "",
                 "date": oDate.format("HH:mm")
             });
             for (var i=0;i<10;i++){
                 oDate.subtract(5,"minutes");
                 oHome15PerformanceData.unshift({
-                    "usage": "",
-                    "awaiting-time": "",
                     "date": oDate.format("HH:mm")
                 });
             }
@@ -323,11 +369,14 @@ try{
                     break;
 
                     case "queue-status":
-                        $("#queue-status").text(String(_logData.match(/[0-9]+/))+" queued jobs");
+                        var jobs = parseInt(_logData.match(/[0-9]+/), 10);
+                        $("#queue-status").html(jobs + ' <small class="kpi-unit">jobs queued</small>');
                     break;
 
                     case "quotas-status":
                         var oQuotas = JSON.parse(_logData);
+                        var warnings = oQuotas.filter(function(q){ return q.quedan !== "OK"; }).length;
+                        $("#quotas-summary").html(warnings + ' <small class="kpi-unit">of ' + oQuotas.length + ' groups</small>');
                         for(var i=0;i<oQuotas.length;i++){
                              var $grupoCell = $("#"+oQuotas[i].grupo);
                              var $statusCell = $("#"+oQuotas[i].grupo+"-status");
